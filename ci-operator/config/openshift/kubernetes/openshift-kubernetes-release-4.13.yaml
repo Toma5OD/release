@@ -337,7 +337,7 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: k8s-conformance
-  interval: 48h
+  cron: 14 1 * * 0
   steps:
     cluster_profile: aws
     test:

@@ -28,13 +28,13 @@ resources:
       memory: 5Gi
 tests:
 - as: platform-none-vsphere
-  cron: 0 0 * * 1
+  cron: 6 4 * * 0
   steps:
     cluster_profile: vsphere
     workflow: opct-test-platform-none-vsphere
   timeout: 6h0m0s
 - as: platform-external-vsphere
-  cron: 0 0 * * 1
+  cron: 30 3 * * 0
   steps:
     cluster_profile: vsphere
     env:

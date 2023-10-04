@@ -2,7 +2,6 @@ periodics:
 - agent: kubernetes
   cluster: build02
   decorate: true
-  interval: 48h
   labels:
     job-release: "4.13"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
@@ -102,7 +101,6 @@ periodics:
 - agent: kubernetes
   cluster: build01
   decorate: true
-  interval: 48h
   labels:
     job-env: aws
     job-release: "4.13"
@@ -215,7 +213,6 @@ periodics:
 - agent: kubernetes
   cluster: build04
   decorate: true
-  interval: 48h
   labels:
     job-release: "4.13"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
@@ -328,7 +325,6 @@ periodics:
 - agent: kubernetes
   cluster: build02
   decorate: true
-  interval: 48h
   labels:
     job-release: "4.13"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
@@ -439,7 +435,6 @@ periodics:
 - agent: kubernetes
   cluster: build01
   decorate: true
-  interval: 24h
   labels:
     job-env: aws
     job-release: "4.13"
@@ -541,7 +536,6 @@ periodics:
   decorate: true
   decoration_config:
     timeout: 8h0m0s
-  interval: 24h
   labels:
     job-env: aws
     job-release: "4.13"
@@ -677,7 +671,6 @@ periodics:
 - agent: kubernetes
   cluster: build01
   decorate: true
-  interval: 48h
   labels:
     job-release: "4.13"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
@@ -779,7 +772,6 @@ periodics:
 - agent: kubernetes
   cluster: build01
   decorate: true
-  interval: 24h
   labels:
     job-release: "4.13"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
