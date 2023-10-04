@@ -9,12 +9,12 @@ images:
 releases:
   initial:
     integration:
-      name: "4.13"
+      name: '4.13'
       namespace: ocp
   latest:
     integration:
       include_built_images: true
-      name: "4.13"
+      name: '4.13'
       namespace: ocp
 resources:
   '*':
@@ -74,7 +74,7 @@ tests:
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     test:
     - as: test
       cli: latest
@@ -99,7 +99,7 @@ tests:
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     test:
     - as: test
       cli: latest
@@ -170,7 +170,7 @@ tests:
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-aws-pre
     - ref: fips-check
@@ -198,7 +198,7 @@ tests:
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     test:
     - as: test
       cli: latest
@@ -223,7 +223,7 @@ tests:
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     test:
     - as: test
       cli: latest
@@ -294,7 +294,7 @@ tests:
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-aws-pre
     - ref: fips-check
@@ -322,7 +322,7 @@ tests:
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-aws-pre
     - ref: fips-check
@@ -350,7 +350,7 @@ tests:
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     test:
     - as: test
       cli: latest
@@ -375,7 +375,7 @@ tests:
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     test:
     - as: test
       cli: latest
@@ -396,7 +396,7 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-rhcos4-e8-weekly
-  cron: 07 20 * * 6
+  cron: 57 15 * * 6
   steps:
     cluster_profile: aws
     test:
@@ -420,7 +420,7 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-ocp4-e8-weekly
-  cron: 07 20 * * 6
+  cron: 14 23 * * 7
   steps:
     cluster_profile: aws
     test:
@@ -443,11 +443,11 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-ocp4-moderate-weekly
-  cron: 07 20 * * 6
+  cron: 33 18 * * 6
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     test:
     - as: test
       cli: latest
@@ -468,11 +468,11 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-ocp4-moderate-node-weekly
-  cron: 07 20 * * 6
+  cron: 3 9 * * 7
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     test:
     - as: test
       cli: latest
@@ -493,7 +493,7 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-ocp4-cis-weekly
-  cron: 07 20 * * 6
+  cron: 15 15 * * 6
   steps:
     cluster_profile: aws
     test:
@@ -516,7 +516,7 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-ocp4-cis-node-weekly
-  cron: 07 20 * * 6
+  cron: 30 3 * * 7
   steps:
     cluster_profile: aws
     test:
@@ -539,11 +539,11 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-rhcos4-moderate-weekly
-  cron: 07 20 * * 6
+  cron: 48 17 * * 6
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-aws-pre
     - ref: fips-check
@@ -567,11 +567,11 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-ocp4-stig-weekly
-  cron: 07 20 * * 6
+  cron: 37 23 * * 7
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     test:
     - as: test
       cli: latest
@@ -592,11 +592,11 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-ocp4-stig-node-weekly
-  cron: 07 20 * * 6
+  cron: 27 0 * * 6
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     test:
     - as: test
       cli: latest
@@ -617,7 +617,7 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-ocp4-pci-dss-weekly
-  cron: 07 20 * * 6
+  cron: 3 13 * * 6
   steps:
     cluster_profile: aws
     test:
@@ -640,7 +640,7 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-ocp4-pci-dss-node-weekly
-  cron: 07 20 * * 6
+  cron: 37 15 * * 6
   steps:
     cluster_profile: aws
     test:
@@ -663,11 +663,11 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-rhcos4-high-weekly
-  cron: 07 20 * * 6
+  cron: 49 21 * * 7
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-aws-pre
     - ref: fips-check
@@ -691,11 +691,11 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-rhcos4-stig-weekly
-  cron: 07 20 * * 6
+  cron: 2 4 * * 6
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-aws-pre
     - ref: fips-check
@@ -719,11 +719,11 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-ocp4-high-weekly
-  cron: 07 20 * * 6
+  cron: 13 7 * * 6
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     test:
     - as: test
       cli: latest
@@ -744,11 +744,11 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-ocp4-high-node-weekly
-  cron: 07 20 * * 6
+  cron: 24 0 * * 7
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     test:
     - as: test
       cli: latest

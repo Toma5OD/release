@@ -2,7 +2,7 @@ base_images:
   os-min8:
     name: ubi-minimal
     namespace: ocp
-    tag: "8"
+    tag: '8'
 binary_build_commands: make generate fmt vet binary binary-rte binary-e2e-all binary-numacell
 build_root:
   project_image:
@@ -48,12 +48,12 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
   latest:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     requests:
@@ -107,7 +107,7 @@ tests:
           memory: 1Gi
     workflow: optional-operators-ci-aws
 - as: ci-must-gather-e2e
-  cron: 42 0 * * *
+  cron: 22 1 * * 6
   steps:
     cluster_profile: aws
     dependencies:

@@ -26,7 +26,7 @@ base_images:
   coreos-centos-stream8:
     name: stream8
     namespace: coreos
-    tag: "8"
+    tag: '8'
   dev-scripts:
     name: test
     namespace: ocp-kni
@@ -89,7 +89,7 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     requests:
@@ -160,7 +160,7 @@ tests:
     cluster_profile: packet-assisted
     workflow: assisted-agent
 - as: subsystem-test-periodic
-  cron: 00 00 */1 * 0-5
+  cron: 18 3 * * 7
   steps:
     cluster_profile: packet-assisted
     workflow: assisted-agent

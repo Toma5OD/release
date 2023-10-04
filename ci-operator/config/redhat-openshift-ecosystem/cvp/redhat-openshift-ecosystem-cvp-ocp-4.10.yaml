@@ -4,7 +4,7 @@ releases:
       architecture: amd64
       product: ocp
       stream: nightly
-      version: "4.10"
+      version: '4.10'
 resources:
   '*':
     limits:
@@ -20,23 +20,24 @@ tests:
     owner: cvp
     product: ocp
     timeout: 1h0m0s
-    version: "4.10"
-  cron: '@yearly'
+    version: '4.10'
+  cron: 58 10 7,17 * *
   steps:
     dependency_overrides:
-      BUNDLE_IMAGE: brew.registry.redhat.io/rh-osbs-stage/e2e-e2e-test-operator-bundle-container:8.0-11
+      BUNDLE_IMAGE: 
+        brew.registry.redhat.io/rh-osbs-stage/e2e-e2e-test-operator-bundle-container:8.0-11
       OO_INDEX: brew.registry.redhat.io/rh-osbs-stage/iib:40523
     env:
-      CUSTOM_SCORECARD_TESTCASE: ""
-      OO_CHANNEL: "4.3"
+      CUSTOM_SCORECARD_TESTCASE: ''
+      OO_CHANNEL: '4.3'
       OO_INSTALL_NAMESPACE: '!create'
       OO_PACKAGE: e2e-test-operator
       OO_TARGET_NAMESPACES: '!install'
-      PYXIS_URL: ""
+      PYXIS_URL: ''
       TEST_MODE: cvp
     workflow: optional-operators-cvp-common-claim
 - as: cvp-common-aws
-  cron: '@yearly'
+  cron: 31 3 8,17 * *
   steps:
     cluster_profile: aws-cpaas
     workflow: optional-operators-cvp-common-aws

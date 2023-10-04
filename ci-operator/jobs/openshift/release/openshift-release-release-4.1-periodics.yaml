@@ -4,7 +4,7 @@ periodics:
   cron: '@yearly'
   decorate: true
   labels:
-    job-release: "4.2"
+    job-release: '4.2'
   name: promote-release-openshift-machine-os-content-e2e-aws-4.1
   spec:
     containers:
@@ -54,14 +54,14 @@ periodics:
 
         # also tag the image into the ocp private stream
         oc tag "${to_quay}" "ocp-private/${BRANCH}-priv:${TAG}"
-      - ""
+      - ''
       env:
       - name: TAG_NS
         value: rhcos
       - name: TAG
         value: machine-os-content
       - name: BRANCH
-        value: "4.1"
+        value: '4.1'
       - name: TAG_SOURCE
         value: machine-os-content:$(BRANCH)
       - name: UNRESOLVED_CONFIG
@@ -104,7 +104,7 @@ periodics:
               workflow: openshift-e2e-aws
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -153,14 +153,15 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  promote: true
 - agent: kubernetes
   cluster: build05
-  cron: 1 4 13 */12 *
+  cron: 27 1 9,20 * *
   decorate: true
   labels:
     job-env: aws
-    job-release: "4.1"
-    release.openshift.io/verify: "true"
+    job-release: '4.1'
+    release.openshift.io/verify: 'true'
   name: release-openshift-origin-installer-e2e-aws-upgrade-4.1-stable-to-4.1-nightly
   spec:
     containers:
@@ -177,7 +178,7 @@ periodics:
       - ci-operator
       env:
       - name: BRANCH
-        value: "4.1"
+        value: '4.1'
       - name: CLUSTER_TYPE
         value: aws
       - name: CONFIG_SPEC
@@ -212,7 +213,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -251,11 +252,11 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build05
-  cron: 20 6 1 */12 *
+  cron: 16 8 5,24 * *
   decorate: true
   labels:
     job-env: aws
-    job-release: "4.1"
+    job-release: '4.1'
   name: release-openshift-origin-installer-e2e-aws-upgrade-rollback-4.1
   spec:
     containers:
@@ -272,7 +273,7 @@ periodics:
       - ci-operator
       env:
       - name: BRANCH
-        value: "4.1"
+        value: '4.1'
       - name: CLUSTER_TYPE
         value: aws
       - name: CONFIG_SPEC
@@ -295,7 +296,7 @@ periodics:
               upgrade: true
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m

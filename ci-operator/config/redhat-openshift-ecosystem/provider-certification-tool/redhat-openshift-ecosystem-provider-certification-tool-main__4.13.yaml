@@ -1,6 +1,6 @@
 base_images:
   upi-installer:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: upi-installer
 binary_build_commands: make linux-amd64
@@ -14,7 +14,7 @@ releases:
     release:
       architecture: amd64
       channel: fast
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     limits:
@@ -24,25 +24,25 @@ resources:
       memory: 200Mi
   upi-installer:
     requests:
-      cpu: "3"
+      cpu: '3'
       memory: 5Gi
 tests:
 - as: platform-none-vsphere
-  cron: 0 0 * * 1
+  cron: 35 20 * * 6
   steps:
     cluster_profile: vsphere
     workflow: opct-test-platform-none-vsphere
   timeout: 6h0m0s
 - as: platform-external-vsphere
-  cron: 0 0 * * 1
+  cron: 51 11 * * 7
   steps:
     cluster_profile: vsphere
     env:
-      PATCH_INFRA_MANIFEST: "true"
+      PATCH_INFRA_MANIFEST: 'true'
     workflow: opct-test-platform-external-vsphere
   timeout: 6h0m0s
 zz_generated_metadata:
   branch: main
   org: redhat-openshift-ecosystem
   repo: provider-certification-tool
-  variant: "4.13"
+  variant: '4.13'

@@ -1,22 +1,23 @@
 base_images:
   cli:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: cli
   hypershift-operator:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: hypershift-operator
   operator-sdk:
-    name: "4.14"
+    name: '4.14'
     namespace: origin
     tag: operator-sdk
   upi-installer:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: upi-installer
 binary_build_commands: LD_FLAGS="-X github.com/jaegertracing/jaeger-operator/pkg/version".version=1.49.0
-  -X github.com/jaegertracing/jaeger-operator/pkg/version".buildDate=2023-09-29T02:01:34Z
+  -X 
+  github.com/jaegertracing/jaeger-operator/pkg/version".buildDate=2023-09-29T02:01:34Z
   -X github.com/jaegertracing/jaeger-operator/pkg/version".defaultJaeger="1.49.0"
   make build
 build_root:
@@ -31,7 +32,7 @@ images:
   - name: JAEGER_VERSION
     value: 1.49.0
   - name: VERSION_DATE
-    value: "2023-09-29T02:01:34Z"
+    value: '2023-09-29T02:01:34Z'
   - name: VERSION_PKG
     value: github.com/jaegertracing/jaeger-operator/pkg/version
   context_dir: .
@@ -56,7 +57,7 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     requests:
@@ -64,7 +65,7 @@ resources:
       memory: 200Mi
 tests:
 - as: jaeger-e2e-tests
-  cron: 0 6 * * 3
+  cron: 41 4 * * 6
   steps:
     cluster_profile: aws-qe
     env:

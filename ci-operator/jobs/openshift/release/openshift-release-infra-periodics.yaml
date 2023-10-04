@@ -27,7 +27,7 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: RELEASE_IMAGE_INITIAL
       - name: BRANCH
-        value: "4.5"
+        value: '4.5'
       - name: CONFIG_SPEC
         value: |
           resources:
@@ -42,7 +42,7 @@ periodics:
             namespace: ocp
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -100,12 +100,12 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: CLUSTER_DURATION
-        value: "9000"
+        value: '9000'
       - name: COMPUTE_MACHINE_TYPE
         value: m5.xlarge
       - name: OSD_CLUSTER_VERSION
       - name: BRANCH
-        value: "4.1"
+        value: '4.1'
       - name: CLUSTER_TYPE
         value: osd-ephemeral
       - name: JOB_NAME_SAFE
@@ -164,7 +164,7 @@ periodics:
               - ref: openshift-e2e-test
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -238,9 +238,9 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: CLUSTER_DURATION
-        value: "9000"
+        value: '9000'
       - name: BRANCH
-        value: "4.9"
+        value: '4.9'
       - name: CLUSTER_TYPE
         value: aws
       - name: UNRESOLVED_CONFIG
@@ -362,7 +362,7 @@ periodics:
       - name: NAMESPACE
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -436,9 +436,9 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: CLUSTER_DURATION
-        value: "9000"
+        value: '9000'
       - name: BRANCH
-        value: "4.9"
+        value: '4.9'
       - name: CLUSTER_TYPE
         value: aws
       - name: UNRESOLVED_CONFIG
@@ -467,7 +467,7 @@ periodics:
       - name: NAMESPACE
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -539,9 +539,9 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: CLUSTER_DURATION
-        value: "9000"
+        value: '9000'
       - name: BRANCH
-        value: "4.9"
+        value: '4.9'
       - name: CLOUD_TYPE
         value: azure
       - name: CLUSTER_TYPE
@@ -641,7 +641,7 @@ periodics:
       - name: NAMESPACE
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -715,9 +715,9 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: CLUSTER_DURATION
-        value: "9000"
+        value: '9000'
       - name: BRANCH
-        value: "4.9"
+        value: '4.9'
       - name: CLUSTER_TYPE
         value: gcp
       - name: UNRESOLVED_CONFIG
@@ -840,7 +840,7 @@ periodics:
       - name: NAMESPACE
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -916,9 +916,9 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: CLUSTER_DURATION
-        value: "9000"
+        value: '9000'
       - name: BRANCH
-        value: "4.9"
+        value: '4.9'
       - name: CLUSTER_TYPE
         value: equinix-ocp-metal
       - name: JOB_NAME_SAFE
@@ -1077,7 +1077,7 @@ periodics:
                   resources: { requests: { cpu: 100m, memory: 100Mi } }
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1153,9 +1153,9 @@ periodics:
       - name: CLUSTER_PROFILE
         value: vsphere
       - name: CLUSTER_DURATION
-        value: "9000"
+        value: '9000'
       - name: BRANCH
-        value: "4.9"
+        value: '4.9'
       - name: CLUSTER_TYPE
         value: vsphere
       - name: UNRESOLVED_CONFIG
@@ -1260,7 +1260,7 @@ periodics:
       - name: NAMESPACE
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1311,7 +1311,7 @@ periodics:
     config-type: modern
     job-architecture: amd64
     job-env: ovirt
-    job-release: "4.5"
+    job-release: '4.5'
     job-type: launch
   name: release-openshift-origin-installer-launch-ovirt
   spec:
@@ -1335,9 +1335,9 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: CLUSTER_DURATION
-        value: "9000"
+        value: '9000'
       - name: BRANCH
-        value: "4.5"
+        value: '4.5'
       - name: CLUSTER_TYPE
         value: ovirt
       - name: JOB_NAME_SAFE
@@ -1359,7 +1359,7 @@ periodics:
               workflow: openshift-e2e-ovirt-clusterbot
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1411,7 +1411,7 @@ periodics:
     job-env: aws
     job-test: e2e
     job-type: upgrade
-    tag: "1"
+    tag: '1'
   name: release-openshift-origin-installer-e2e-aws-upgrade
   spec:
     containers:
@@ -1432,7 +1432,7 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: BRANCH
-        value: "4.1"
+        value: '4.1'
       - name: CLUSTER_TYPE
         value: aws
       - name: CONFIG_SPEC
@@ -1467,7 +1467,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1567,7 +1567,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1667,7 +1667,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1767,7 +1767,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1867,7 +1867,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1970,7 +1970,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2073,7 +2073,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2141,7 +2141,7 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: BRANCH
-        value: "4.3"
+        value: '4.3'
       - name: CLUSTER_TYPE
         value: azure4
       - name: CONFIG_SPEC
@@ -2164,7 +2164,7 @@ periodics:
               upgrade: true
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2230,7 +2230,7 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: BRANCH
-        value: "4.10"
+        value: '4.10'
       - name: CLUSTER_TYPE
         value: gcp
       - name: CONFIG_SPEC
@@ -2265,7 +2265,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2335,13 +2335,13 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: CLUSTER_DURATION
-        value: "9000"
+        value: '9000'
       - name: BRANCH
-        value: "4.8"
+        value: '4.8'
       - name: CLUSTER_TYPE
         value: hypershift
       - name: HYPERSHIFT_NODE_COUNT
-        value: "2"
+        value: '2'
       - name: JOB_NAME_SAFE
         value: launch
       - name: NAMESPACE
@@ -2374,7 +2374,7 @@ periodics:
               workflow: hypershift-aws-cluster
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2512,7 +2512,7 @@ periodics:
     config-type: modern
     job-architecture: amd64
     job-env: openstack
-    job-release: "4.12"
+    job-release: '4.12'
     job-type: launch
   name: release-openshift-origin-installer-launch-openstack
   spec:
@@ -2536,9 +2536,9 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: CLUSTER_DURATION
-        value: "9000"
+        value: '9000'
       - name: BRANCH
-        value: "4.12"
+        value: '4.12'
       - name: CLUSTER_TYPE
         value: openstack
       - name: JOB_NAME_SAFE
@@ -2621,7 +2621,7 @@ periodics:
               workflow: openshift-e2e-$(CLUSTER_TYPE)-upi
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2697,9 +2697,9 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: CLUSTER_DURATION
-        value: "9000"
+        value: '9000'
       - name: BRANCH
-        value: "4.11"
+        value: '4.11'
       - name: CLUSTER_TYPE
         value: aws
       - name: JOB_NAME_SAFE
@@ -2729,7 +2729,7 @@ periodics:
               - ref: clusterbot-wait
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2807,9 +2807,9 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
       - name: CLUSTER_VARIANT
       - name: CLUSTER_DURATION
-        value: "9000"
+        value: '9000'
       - name: BRANCH
-        value: "4.12"
+        value: '4.12'
       - name: CLUSTER_TYPE
         value: aws
       - name: JOB_NAME_SAFE
@@ -2835,7 +2835,7 @@ periodics:
               - ref: clusterbot-wait
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m

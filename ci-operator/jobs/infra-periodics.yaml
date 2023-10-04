@@ -16,7 +16,7 @@ periodics:
       - /usr/bin/oc
       image: registry.ci.openshift.org/ocp/4.8:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -38,7 +38,7 @@ periodics:
       - /usr/bin/oc
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -63,7 +63,7 @@ periodics:
       - /usr/bin/sprint-automation
       image: registry.ci.openshift.org/ci/sprint-automation:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -114,7 +114,7 @@ periodics:
       - /usr/bin/sprint-automation
       image: registry.ci.openshift.org/ci/sprint-automation:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -171,7 +171,7 @@ periodics:
       - /bin/bash
       image: registry.ci.openshift.org/ci/pr-reminder:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -231,7 +231,7 @@ periodics:
       - /ko-app/commenter
       image: gcr.io/k8s-prow/commenter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -273,7 +273,7 @@ periodics:
       - /ko-app/commenter
       image: gcr.io/k8s-prow/commenter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -315,7 +315,7 @@ periodics:
       - /ko-app/commenter
       image: gcr.io/k8s-prow/commenter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -357,7 +357,7 @@ periodics:
       - /ko-app/commenter
       image: gcr.io/k8s-prow/commenter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -386,7 +386,7 @@ periodics:
       - /usr/bin/serviceaccount-secret-rotation-trigger
       image: serviceaccount-secret-rotation-trigger:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -434,7 +434,7 @@ periodics:
       - /ko-app/commenter
       image: gcr.io/k8s-prow/commenter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -479,7 +479,7 @@ periodics:
       - /ko-app/commenter
       image: gcr.io/k8s-prow/commenter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -525,7 +525,7 @@ periodics:
       - /ko-app/commenter
       image: gcr.io/k8s-prow/commenter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -574,7 +574,7 @@ periodics:
       - /ko-app/commenter
       image: gcr.io/k8s-prow/commenter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -624,7 +624,7 @@ periodics:
       - /ko-app/commenter
       image: gcr.io/k8s-prow/commenter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -672,7 +672,7 @@ periodics:
       - /ko-app/commenter
       image: gcr.io/k8s-prow/commenter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -721,7 +721,7 @@ periodics:
       - /ko-app/commenter
       image: gcr.io/k8s-prow/commenter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -774,7 +774,7 @@ periodics:
             name: openshift-prow-github-app
       image: gcr.io/k8s-prow/label_sync:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -932,7 +932,7 @@ periodics:
     repo: operator-framework-olm
   labels:
     ci.openshift.io/role: infra
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-auto-olm-downstreaming
   reporter_config:
     slack:
@@ -1072,7 +1072,8 @@ periodics:
       settings of the GitHub Branch Protection based on Prow configuration. This job
       only manages repositories in the openshift GitHub organization. For repos outside
       of openshift, see periodic-branch-protection.
-    ci.openshift.io/sop: https://github.com/openshift/release/blob/master/docs/dptp-triage-sop/infrastructure-jobs.md#periodic-branch-protector-openshift-org
+    ci.openshift.io/sop: 
+      https://github.com/openshift/release/blob/master/docs/dptp-triage-sop/infrastructure-jobs.md#periodic-branch-protector-openshift-org
   cluster: app.ci
   decorate: true
   extra_refs:
@@ -1101,7 +1102,7 @@ periodics:
       - /ko-app/branchprotector
       image: gcr.io/k8s-prow/branchprotector:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1119,7 +1120,8 @@ periodics:
       settings of the GitHub Branch Protection based on Prow configuration. This job
       only manages repositories outside the openshift GitHub organization. For repos
       in openshift, see periodic-branch-protection-openshift-org.
-    ci.openshift.io/sop: https://github.com/openshift/release/blob/master/docs/dptp-triage-sop/infrastructure-jobs.md#periodic-branch-protector
+    ci.openshift.io/sop: 
+      https://github.com/openshift/release/blob/master/docs/dptp-triage-sop/infrastructure-jobs.md#periodic-branch-protector
   cluster: app.ci
   decorate: true
   extra_refs:
@@ -1155,7 +1157,7 @@ periodics:
             name: openshift-prow-github-app
       image: gcr.io/k8s-prow/branchprotector:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1175,7 +1177,8 @@ periodics:
       the ownership of this job with DPP: we make sure that peribolos works and DPP
       owns the config in openshift/config. Most problems with this job are caused
       by the configuration, so we often just ping @dpp-triage to resolve them.'
-    ci.openshift.io/sop: https://github.com/openshift/release/blob/master/docs/dptp-triage-sop/infrastructure-jobs.md#periodic-org-sync
+    ci.openshift.io/sop: 
+      https://github.com/openshift/release/blob/master/docs/dptp-triage-sop/infrastructure-jobs.md#periodic-org-sync
   cluster: app.ci
   decorate: true
   decoration_config:
@@ -1212,7 +1215,7 @@ periodics:
       - /ko-app/peribolos
       image: gcr.io/k8s-prow/peribolos:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1256,7 +1259,7 @@ periodics:
             name: pagerduty
       image: applyconfig:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1281,7 +1284,7 @@ periodics:
       - hack/config-bootstrapper.sh
       image: gcr.io/k8s-prow/config-bootstrapper:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1319,7 +1322,7 @@ periodics:
       - repo-brancher
       image: repo-brancher:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1333,7 +1336,8 @@ periodics:
         secretName: github-credentials-openshift-merge-robot
 - agent: kubernetes
   annotations:
-    ci.openshift.io/sop: https://github.com/openshift/release/blob/master/docs/dptp-triage-sop/infrastructure-jobs.md#periodic-openshift-release-private-org-sync
+    ci.openshift.io/sop: 
+      https://github.com/openshift/release/blob/master/docs/dptp-triage-sop/infrastructure-jobs.md#periodic-openshift-release-private-org-sync
   cluster: app.ci
   decorate: true
   extra_refs:
@@ -1361,10 +1365,10 @@ periodics:
       - private-org-sync
       image: private-org-sync:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
-          cpu: "1"
+          cpu: '1'
           memory: 1Gi
       volumeMounts:
       - mountPath: /etc/github
@@ -1400,7 +1404,7 @@ periodics:
       - blocking-issue-creator
       image: blocking-issue-creator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1420,7 +1424,7 @@ periodics:
     skip_cloning: true
   labels:
     ci.openshift.io/role: infra
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   max_concurrency: 1
   name: periodic-imagestream-importer
   spec:
@@ -1439,7 +1443,7 @@ periodics:
       - /bin/bash
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1696,10 +1700,10 @@ periodics:
       - /usr/bin/ocp-build-data-enforcer
       env:
       - name: CLICOLOR_FORCE
-        value: "1"
+        value: '1'
       image: registry.ci.openshift.org/ci/ocp-build-data-enforcer:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1725,7 +1729,7 @@ periodics:
     workdir: true
   labels:
     ci.openshift.io/role: infra
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-prow-auto-testgrid-generator
   spec:
     containers:
@@ -1788,7 +1792,7 @@ periodics:
             name: arm01-dex-oidc
       image: applyconfig:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1826,7 +1830,7 @@ periodics:
       - applyconfig
       image: applyconfig:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1848,7 +1852,7 @@ periodics:
   interval: 4h
   labels:
     ci.openshift.io/role: infra
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-openshift-release-master-accept-invitations-cherrypick-robot
   spec:
     containers:
@@ -1862,7 +1866,7 @@ periodics:
       - /ko-app/invitations-accepter
       image: gcr.io/k8s-prow/invitations-accepter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1880,7 +1884,7 @@ periodics:
   interval: 4h
   labels:
     ci.openshift.io/role: infra
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-openshift-release-master-accept-invitations-merge-robot
   spec:
     containers:
@@ -1894,7 +1898,7 @@ periodics:
       - /ko-app/invitations-accepter
       image: gcr.io/k8s-prow/invitations-accepter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1912,7 +1916,7 @@ periodics:
   interval: 4h
   labels:
     ci.openshift.io/role: infra
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-openshift-release-master-accept-invitations-ci-robot
   spec:
     containers:
@@ -1926,7 +1930,7 @@ periodics:
       - /ko-app/invitations-accepter
       image: gcr.io/k8s-prow/invitations-accepter:v20230927-4613add0a1
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2020,7 +2024,7 @@ periodics:
       - repo-brancher
       image: repo-brancher:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -2065,7 +2069,7 @@ periodics:
       - repo-brancher
       image: repo-brancher:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -2110,7 +2114,7 @@ periodics:
       - repo-brancher
       image: repo-brancher:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -2155,7 +2159,7 @@ periodics:
       - repo-brancher
       image: repo-brancher:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -2200,7 +2204,7 @@ periodics:
       - repo-brancher
       image: repo-brancher:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -2245,7 +2249,7 @@ periodics:
       - repo-brancher
       image: repo-brancher:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -2334,7 +2338,8 @@ periodics:
   annotations:
     ci.openshift.io/description: This runs the check-gh-automation tool to verify
       that all repos with CI configured are accessible by test-platform's bots
-    ci.openshift.io/sop: https://github.com/openshift/release/blob/master/docs/dptp-triage-sop/infrastructure-jobs.md#periodic-check-gh-automation
+    ci.openshift.io/sop: 
+      https://github.com/openshift/release/blob/master/docs/dptp-triage-sop/infrastructure-jobs.md#periodic-check-gh-automation
   cluster: app.ci
   cron: 0 3 * * 1
   decorate: true
@@ -2601,7 +2606,7 @@ periodics:
       - image-graph-generator
       image: image-graph-generator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m

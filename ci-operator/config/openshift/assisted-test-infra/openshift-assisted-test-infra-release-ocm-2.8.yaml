@@ -52,13 +52,13 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
   latest-multi:
     candidate:
       architecture: multi
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     requests:
@@ -115,7 +115,7 @@ tests:
         WORKER_DISK=40000000000
     workflow: assisted-baremetal
 - as: e2e-metal-assisted-kube-api-net-suite-periodic
-  cron: 43 22 */1 * 1-5
+  cron: 42 3 * * 6
   steps:
     cluster_profile: packet-assisted
     env:
@@ -190,7 +190,7 @@ tests:
       PLATFORM: vsphere
     workflow: assisted-vsphere
 - as: e2e-vsphere-assisted-kube-api-periodic
-  cron: 00 00 */1 * 0-5
+  cron: 59 4 * * 7
   steps:
     cluster_profile: vsphere
     env:

@@ -2,7 +2,7 @@ base_images:
   ubi_minimal:
     name: ubi-minimal
     namespace: ocp
-    tag: "8"
+    tag: '8'
 build_root:
   image_stream_tag:
     name: release
@@ -33,7 +33,7 @@ releases:
     release:
       architecture: amd64
       channel: fast
-      version: "4.10"
+      version: '4.10'
 resources:
   '*':
     requests:
@@ -55,7 +55,8 @@ tests:
           cpu: 100m
           memory: 200Mi
 - as: odh-notebook-controller-unit
-  run_if_changed: ^(components/common/.*|components/notebook-controller/.*|components/odh-notebook-controller/.*)
+  run_if_changed: 
+    ^(components/common/.*|components/notebook-controller/.*|components/odh-notebook-controller/.*)
   steps:
     test:
     - as: unit
@@ -85,7 +86,7 @@ tests:
       RELEASE_VERSION: master
     workflow: opendatahub-io-ci-image-mirror
 - as: kf-notebook-controller-image-mirror-latest
-  cron: 0 2 * * *
+  cron: 33 4 10,16 * *
   steps:
     dependencies:
       SOURCE_IMAGE_REF: kf-notebook-controller
@@ -110,7 +111,7 @@ tests:
       RELEASE_VERSION: master
     workflow: opendatahub-io-ci-image-mirror
 - as: odh-notebook-controller-image-mirror-latest
-  cron: 0 2 * * *
+  cron: 28 4 9,19 * *
   steps:
     dependencies:
       SOURCE_IMAGE_REF: odh-notebook-controller

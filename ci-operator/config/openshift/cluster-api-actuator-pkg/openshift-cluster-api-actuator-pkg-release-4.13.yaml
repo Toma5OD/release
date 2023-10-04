@@ -1,6 +1,6 @@
 base_images:
   base:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: base
 build_root:
@@ -8,17 +8,17 @@ build_root:
 promotion:
   additional_images:
     cluster-api-actuator-pkg: src
-  name: "4.13"
+  name: '4.13'
   namespace: ocp
 releases:
   initial:
     integration:
-      name: "4.13"
+      name: '4.13'
       namespace: ocp
   latest:
     integration:
       include_built_images: true
-      name: "4.13"
+      name: '4.13'
       namespace: ocp
 resources:
   '*':
@@ -117,7 +117,6 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-operator-periodic
-  interval: 72h
   steps:
     cluster_profile: aws
     test:
@@ -129,8 +128,8 @@ tests:
         requests:
           cpu: 100m
     workflow: ipi-aws
+  cron: 45 18 * * 6
 - as: e2e-vsphere-operator-periodic
-  interval: 72h
   steps:
     cluster_profile: vsphere
     test:
@@ -142,8 +141,8 @@ tests:
         requests:
           cpu: 100m
     workflow: openshift-e2e-vsphere
+  cron: 0 18 * * 6
 - as: e2e-azure-operator-periodic
-  interval: 72h
   steps:
     cluster_profile: azure4
     test:
@@ -155,8 +154,8 @@ tests:
         requests:
           cpu: 100m
     workflow: ipi-azure
+  cron: 52 0 * * 7
 - as: e2e-gcp-operator-periodic
-  interval: 72h
   steps:
     cluster_profile: gcp
     test:
@@ -168,8 +167,8 @@ tests:
         requests:
           cpu: 100m
     workflow: ipi-gcp
+  cron: 24 18 * * 7
 - as: e2e-openstack-operator-periodic
-  interval: 72h
   steps:
     cluster_profile: openstack-vexxhost
     test:
@@ -181,6 +180,7 @@ tests:
         requests:
           cpu: 100m
     workflow: openshift-e2e-openstack-ipi
+  cron: 9 2 * * 7
 zz_generated_metadata:
   branch: release-4.13
   org: openshift

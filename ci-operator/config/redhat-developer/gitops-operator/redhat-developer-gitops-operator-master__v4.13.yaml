@@ -1,10 +1,10 @@
 base_images:
   cli:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: cli
   operator-sdk:
-    name: "4.14"
+    name: '4.14'
     namespace: origin
     tag: operator-sdk
 build_root:
@@ -35,12 +35,12 @@ operator:
 releases:
   initial:
     integration:
-      name: "4.13"
+      name: '4.13'
       namespace: ocp
   latest:
     integration:
       include_built_images: true
-      name: "4.13"
+      name: '4.13'
       namespace: ocp
 resources:
   '*':
@@ -55,7 +55,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.13"
+    version: '4.13'
   skip_if_only_changed: ^docs/|\.(md|adoc)$|^(README|LICENSE|OWNERS)$
   steps:
     env:
@@ -75,7 +75,7 @@ tests:
       from: operator-sdk
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 6Gi
     - as: sequential-e2e-steps
       commands: |
@@ -84,7 +84,7 @@ tests:
       from: dependencies
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 6Gi
     workflow: generic-claim
 - as: kuttl-parallel
@@ -94,7 +94,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.13"
+    version: '4.13'
   skip_if_only_changed: ^docs/|\.(md|adoc)$|^(README|LICENSE|OWNERS)$
   steps:
     env:
@@ -114,7 +114,7 @@ tests:
       from: operator-sdk
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 6Gi
     - as: parallel-e2e-steps
       commands: |
@@ -123,7 +123,7 @@ tests:
       from: dependencies
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 6Gi
     workflow: generic-claim
 - as: e2e
@@ -136,7 +136,7 @@ tests:
       from: dependencies
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 6Gi
     workflow: ipi-aws
 - as: periodic-kuttl-sequential
@@ -146,8 +146,8 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.13"
-  cron: 0 0 * * *
+    version: '4.13'
+  cron: 55 21 * * 7
   steps:
     env:
       INSTALL_NAMESPACE: openshift-gitops-operator
@@ -166,7 +166,7 @@ tests:
       from: operator-sdk
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 6Gi
     - as: sequential-e2e-steps
       commands: |
@@ -175,7 +175,7 @@ tests:
       from: dependencies
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 6Gi
     workflow: generic-claim
 - as: periodic-kuttl-parallel
@@ -185,8 +185,8 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.13"
-  cron: 0 0 * * *
+    version: '4.13'
+  cron: 57 4 * * 6
   steps:
     env:
       INSTALL_NAMESPACE: openshift-gitops-operator
@@ -205,7 +205,7 @@ tests:
       from: operator-sdk
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 6Gi
     - as: parallel-e2e-steps
       commands: |
@@ -214,7 +214,7 @@ tests:
       from: dependencies
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 6Gi
     workflow: generic-claim
 zz_generated_metadata:

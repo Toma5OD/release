@@ -1,6 +1,6 @@
 base_images:
   base:
-    name: "4.11"
+    name: '4.11'
     namespace: ocp
     tag: base
   dev-scripts:
@@ -10,7 +10,7 @@ base_images:
   insights-operator-tests:
     name: insights-operator-tests
     namespace: ci
-    tag: "4.11"
+    tag: '4.11'
   ocp_builder_rhel-8-golang-1.18-openshift-4.11:
     name: builder
     namespace: ocp
@@ -25,17 +25,17 @@ images:
       - registry.ci.openshift.org/ocp/builder:rhel-8-golang-1.18-openshift-4.11
   to: insights-operator
 promotion:
-  name: "4.11"
+  name: '4.11'
   namespace: ocp
 releases:
   initial:
     integration:
-      name: "4.11"
+      name: '4.11'
       namespace: ocp
   latest:
     integration:
       include_built_images: true
-      name: "4.11"
+      name: '4.11'
       namespace: ocp
 resources:
   '*':
@@ -80,7 +80,7 @@ tests:
           cpu: 100m
     workflow: ipi-gcp
 - as: insights-operator-e2e-tests-periodic
-  cron: 0 0 * * *
+  cron: 56 6 5,20 * *
   steps:
     cluster_profile: gcp
     pre:
@@ -100,7 +100,7 @@ tests:
           cpu: 100m
     workflow: ipi-gcp
 - as: insights-operator-test-time-periodic
-  cron: 0 0 * * *
+  cron: 10 2 8,21 * *
   steps:
     cluster_profile: gcp
     pre:

@@ -1,6 +1,6 @@
 base_images:
   ansible:
-    name: "4.11"
+    name: '4.11'
     namespace: ocp
     tag: ansible
   assisted-installer:
@@ -24,7 +24,7 @@ base_images:
     namespace: ocp-kni
     tag: assisted-test-infra
   base:
-    name: "4.11"
+    name: '4.11'
     namespace: ocp
     tag: base
   dev-scripts:
@@ -32,23 +32,23 @@ base_images:
     namespace: ocp-kni
     tag: dev-scripts
   libvirt-installer:
-    name: "4.11"
+    name: '4.11'
     namespace: ocp
     tag: libvirt-installer
   upi-installer:
-    name: "4.11"
+    name: '4.11'
     namespace: ocp
     tag: upi-installer
 releases:
   initial:
     release:
       channel: candidate
-      version: "4.10"
+      version: '4.10'
   latest:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.11"
+      version: '4.11'
 resources:
   '*':
     requests:
@@ -57,7 +57,7 @@ resources:
 tests:
 - as: e2e-metal-ipi-bm-upgrade
   cluster: build05
-  cron: 0 6 1 1 *
+  cron: 41 2 7,24 * *
   steps:
     cluster_profile: equinix-ocp-metal
     env:
@@ -67,7 +67,7 @@ tests:
   timeout: 5h0m0s
 - as: e2e-metal-ipi-upgrade-ovn-ipv6
   cluster: build05
-  cron: 0 6 1 1 *
+  cron: 1 6 8,15 * *
   steps:
     cluster_profile: equinix-ocp-metal
     env:
@@ -75,7 +75,7 @@ tests:
     workflow: baremetalds-e2e-upgrade-ovn-ipv6
   timeout: 5h0m0s
 - as: e2e-aws-upgrade
-  cron: 21 14 */1 * 1-5
+  cron: 43 5 8,24 * *
   steps:
     cluster_profile: aws-2
     env:
@@ -83,7 +83,7 @@ tests:
       TEST_TYPE: upgrade-conformance
     workflow: openshift-upgrade-aws
 - as: e2e-aws-upgrade-ovn-single-node
-  cron: 27 18 */1 * 1-5
+  cron: 30 2 7,17 * *
   steps:
     cluster_profile: aws-2
     env:

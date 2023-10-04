@@ -1,10 +1,10 @@
 base_images:
   ansible:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: ansible
   cli:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: cli
   dev-scripts:
@@ -12,35 +12,35 @@ base_images:
     namespace: ocp-kni
     tag: dev-scripts
   hypershift-operator:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: hypershift-operator
   openstack-installer:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: openstack-installer
   tests-private:
     name: tests-private
     namespace: ci
-    tag: "4.13"
+    tag: '4.13'
   tests-private-postupg:
     name: tests-private
     namespace: ci
-    tag: "4.13"
+    tag: '4.13'
   tests-private-preupg:
     name: tests-private
     namespace: ci
-    tag: "4.13"
+    tag: '4.13'
   tests-private-ui:
     name: tests-private-ui
     namespace: ci
-    tag: "4.13"
+    tag: '4.13'
   tools:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: tools
   upi-installer:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: upi-installer
   verification-tests:
@@ -58,24 +58,24 @@ releases:
       architecture: multi
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
   ppc64le-latest:
     candidate:
       architecture: ppc64le
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     limits:
       memory: 8Gi
     requests:
-      cpu: "1"
+      cpu: '1'
       memory: 4Gi
 tests:
 - as: powervs-ipi-f7
   cluster: build01
-  cron: 0 17 * * 1
+  cron: 22 15 * * 7
   steps:
     cluster_profile: powervs-1
     dependencies:

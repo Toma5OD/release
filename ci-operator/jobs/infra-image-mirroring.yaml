@@ -37,7 +37,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -88,7 +88,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -136,7 +136,7 @@ periodics:
         value: /home/mirror
       image: quay.io/openshift/origin-cli:4.3
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -194,7 +194,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -242,7 +242,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -290,7 +290,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -338,7 +338,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -386,7 +386,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -434,7 +434,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -482,7 +482,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -530,7 +530,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -578,7 +578,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -629,7 +629,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -680,7 +680,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -731,7 +731,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -785,7 +785,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -833,7 +833,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -881,7 +881,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -935,7 +935,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -983,7 +983,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1039,7 +1039,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1090,7 +1090,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1141,7 +1141,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1189,7 +1189,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1247,7 +1247,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1305,7 +1305,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m
@@ -1363,7 +1363,7 @@ periodics:
         value: /home/mirror
       image: registry.ci.openshift.org/ocp/4.12:cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 500m

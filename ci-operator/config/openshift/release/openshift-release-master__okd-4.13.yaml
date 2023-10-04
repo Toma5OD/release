@@ -28,7 +28,7 @@ base_images:
     namespace: ocp-kni
     tag: dev-scripts
   upi-installer:
-    name: "4.13"
+    name: '4.13'
     namespace: origin
     tag: upi-installer
 releases:
@@ -43,7 +43,7 @@ releases:
     candidate:
       product: okd
       stream: okd
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     requests:
@@ -51,22 +51,21 @@ resources:
       memory: 200Mi
 tests:
 - as: e2e-aws-ovn
-  interval: 168h
   steps:
     cluster_profile: aws-2
     env:
       BASE_DOMAIN: aws-2.ci.openshift.org
     workflow: openshift-e2e-aws
+  cron: 8 15 * * 7
 - as: e2e-aws-ovn-upgrade
-  interval: 168h
   steps:
     cluster_profile: aws-2
     env:
       BASE_DOMAIN: aws-2.ci.openshift.org
       TEST_TYPE: upgrade-conformance
     workflow: openshift-upgrade-aws
+  cron: 17 9 * * 7
 - as: e2e-gcp-ovn-upgrade
-  interval: 168h
   steps:
     cluster_profile: gcp-openshift-gce-devel-ci-2
     env:
@@ -75,18 +74,18 @@ tests:
       enable:
       - observers-resource-watch
     workflow: openshift-upgrade-gcp
+  cron: 8 23 * * 7
 - as: e2e-vsphere-ovn
-  interval: 167h
   steps:
     cluster_profile: vsphere-8-vpn
     workflow: openshift-e2e-vsphere
+  cron: 35 23 * * 7
 - as: e2e-vsphere-upi
-  interval: 165h
   steps:
     cluster_profile: vsphere-8-vpn
     workflow: upi-vsphere
+  cron: 40 22 * * 7
 - as: e2e-assisted
-  interval: 48h
   steps:
     cluster_profile: packet-assisted
     env:
@@ -95,6 +94,7 @@ tests:
         NUM_WORKERS=2
         OS_IMAGES='[{"openshift_version":"4.13","cpu_architecture":"x86_64","url":"https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/37.20221127.3.0/x86_64/fedora-coreos-37.20221127.3.0-live.x86_64.iso","version": "37.20221127.3.0"}]'
     workflow: assisted-baremetal
+  cron: 50 12 * * 6
 zz_generated_metadata:
   branch: master
   org: openshift

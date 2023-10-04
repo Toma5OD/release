@@ -4,12 +4,12 @@ releases:
       product: ocp
       relative: 1
       stream: ci
-      version: "4.2"
+      version: '4.2'
   latest:
     candidate:
       product: ocp
       stream: ci
-      version: "4.2"
+      version: '4.2'
 resources:
   '*':
     requests:
@@ -17,22 +17,22 @@ resources:
       memory: 200Mi
 tests:
 - as: e2e-aws-sdn-multitenant
-  cron: 9 23 9 */12 *
+  cron: 36 9 6,18 * *
   steps:
     cluster_profile: aws
     workflow: openshift-e2e-aws-sdn-multi
 - as: e2e-gcp
-  cron: 17 16 17 */12 *
+  cron: 36 3 5,23 * *
   steps:
     cluster_profile: gcp
     workflow: openshift-e2e-gcp
 - as: e2e-aws
-  cron: 0 8 18 */12 *
+  cron: 24 8 10,17 * *
   steps:
     cluster_profile: aws
     workflow: openshift-e2e-aws
 - as: e2e-aws-serial
-  cron: 47 22 25 */12 *
+  cron: 4 7 6,21 * *
   steps:
     cluster_profile: aws
     workflow: openshift-e2e-aws-serial

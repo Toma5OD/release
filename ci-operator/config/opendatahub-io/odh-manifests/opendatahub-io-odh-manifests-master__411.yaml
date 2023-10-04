@@ -19,12 +19,12 @@ images:
 releases:
   initial:
     integration:
-      name: "4.11"
+      name: '4.11'
       namespace: ocp
   latest:
     integration:
       include_built_images: true
-      name: "4.11"
+      name: '4.11'
       namespace: ocp
 resources:
   '*':
@@ -47,7 +47,7 @@ tests:
           memory: 3Gi
     workflow: ipi-gcp
 - as: odh-manifests-e2e-nightly
-  cron: 28 20 2,16 * *
+  cron: 25 10 5,25 * *
   steps:
     cluster_profile: gcp
     env:
@@ -83,4 +83,4 @@ zz_generated_metadata:
   branch: master
   org: opendatahub-io
   repo: odh-manifests
-  variant: "411"
+  variant: '411'

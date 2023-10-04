@@ -1,25 +1,25 @@
 base_images:
   cli:
-    name: "4.10"
+    name: '4.10'
     namespace: ocp
     tag: cli
 build_root:
   image_stream_tag:
     name: maistra-builder
     namespace: ci
-    tag: "2.4"
+    tag: '2.4'
   use_build_cache: true
 releases:
   latest:
     release:
       channel: fast
-      version: "4.10"
+      version: '4.10'
 resources:
   '*':
     limits:
       memory: 16Gi
     requests:
-      cpu: "2"
+      cpu: '2'
       memory: 4Gi
 tests:
 - as: lint
@@ -43,7 +43,7 @@ tests:
     --merge-strategy=merge
   container:
     from: src
-  cron: 00 05 * * 1-5
+  cron: 51 7 10,25 * *
   secrets:
   - mount_path: /creds-github
     name: github-token
@@ -63,7 +63,7 @@ tests:
     --merge-strategy=merge
   container:
     from: src
-  cron: 00 05 * * 1-5
+  cron: 56 4 7,18 * *
   secrets:
   - mount_path: /creds-github
     name: github-token
@@ -84,7 +84,7 @@ tests:
     --fetch-tags
   container:
     from: src
-  cron: 00 05 * * 1-5
+  cron: 42 2 8,20 * *
   secrets:
   - mount_path: /creds-github
     name: github-token
@@ -104,7 +104,7 @@ tests:
     --merge-strategy=merge
   container:
     from: src
-  cron: 00 05 * * 1-5
+  cron: 1 6 7,17 * *
   secrets:
   - mount_path: /creds-github
     name: github-token
@@ -115,7 +115,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.10"
+    version: '4.10'
   run_if_changed: ^docker/maistra-builder_2\.2\.Dockerfile|^docker/scripts
   steps:
     env:
@@ -149,7 +149,7 @@ tests:
       from: src
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 2Gi
       timeout: 1h0m0s
     workflow: servicemesh-istio-e2e-claim
@@ -160,7 +160,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.10"
+    version: '4.10'
   postsubmit: true
   run_if_changed: ^docker/maistra-builder_2\.2\.Dockerfile|^docker/scripts
   steps:
@@ -203,7 +203,7 @@ tests:
       from: src
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 2Gi
       timeout: 1h0m0s
     workflow: servicemesh-istio-e2e-claim
@@ -214,7 +214,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.10"
+    version: '4.10'
   run_if_changed: ^docker/maistra-builder_2\.3\.Dockerfile|^docker/scripts
   steps:
     env:
@@ -248,7 +248,7 @@ tests:
       from: src
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 2Gi
       timeout: 1h0m0s
     workflow: servicemesh-istio-e2e-claim
@@ -259,7 +259,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.10"
+    version: '4.10'
   postsubmit: true
   run_if_changed: ^docker/maistra-builder_2\.3\.Dockerfile|^docker/scripts
   steps:
@@ -302,7 +302,7 @@ tests:
       from: src
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 2Gi
       timeout: 1h0m0s
     workflow: servicemesh-istio-e2e-claim
@@ -313,7 +313,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.10"
+    version: '4.10'
   run_if_changed: ^docker/maistra-builder_2\.4\.Dockerfile|^docker/scripts
   steps:
     env:
@@ -347,7 +347,7 @@ tests:
       from: src
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 2Gi
       timeout: 1h0m0s
     workflow: servicemesh-istio-e2e-claim
@@ -358,7 +358,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.10"
+    version: '4.10'
   postsubmit: true
   run_if_changed: ^docker/maistra-builder_2\.4\.Dockerfile|^docker/scripts
   steps:
@@ -401,7 +401,7 @@ tests:
       from: src
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 2Gi
       timeout: 1h0m0s
     workflow: servicemesh-istio-e2e-claim
@@ -412,7 +412,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.10"
+    version: '4.10'
   run_if_changed: ^docker/maistra-builder_2\.5\.Dockerfile|^docker/scripts
   steps:
     env:
@@ -446,7 +446,7 @@ tests:
       from: src
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 2Gi
       timeout: 1h0m0s
     workflow: servicemesh-istio-e2e-claim
@@ -457,7 +457,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.10"
+    version: '4.10'
   postsubmit: true
   run_if_changed: ^docker/maistra-builder_2\.5\.Dockerfile|^docker/scripts
   steps:
@@ -500,7 +500,7 @@ tests:
       from: src
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 2Gi
       timeout: 1h0m0s
     workflow: servicemesh-istio-e2e-claim
@@ -511,7 +511,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.10"
+    version: '4.10'
   run_if_changed: ^docker/maistra-builder_3\.0\.Dockerfile|^docker/scripts
   steps:
     env:
@@ -545,7 +545,7 @@ tests:
       from: src
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 2Gi
       timeout: 1h0m0s
     workflow: servicemesh-istio-e2e-claim
@@ -556,7 +556,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.10"
+    version: '4.10'
   postsubmit: true
   run_if_changed: ^docker/maistra-builder_3\.0\.Dockerfile|^docker/scripts
   steps:
@@ -599,7 +599,7 @@ tests:
       from: src
       resources:
         requests:
-          cpu: "2"
+          cpu: '2'
           memory: 2Gi
       timeout: 1h0m0s
     workflow: servicemesh-istio-e2e-claim

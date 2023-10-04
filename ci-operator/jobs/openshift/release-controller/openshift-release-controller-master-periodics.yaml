@@ -15,7 +15,7 @@ periodics:
     org: openshift-eng
     repo: jira-lifecycle-plugin
   labels:
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-crt-govulncheck
   reporter_config:
     slack:
@@ -51,7 +51,7 @@ periodics:
       - /bin/bash
       image: registry.ci.openshift.org/ci/govulncheck:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 100m

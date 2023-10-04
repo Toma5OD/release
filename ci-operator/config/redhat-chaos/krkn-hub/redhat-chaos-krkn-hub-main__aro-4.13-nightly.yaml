@@ -8,7 +8,7 @@ base_images:
     namespace: openshift
     tag: stream9
   upi-installer:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: upi-installer
 build_root:
@@ -23,12 +23,12 @@ images:
 releases:
   initial:
     integration:
-      name: "4.13"
+      name: '4.13'
       namespace: ocp
   latest:
     integration:
       include_built_images: true
-      name: "4.13"
+      name: '4.13'
       namespace: ocp
 resources:
   '*':
@@ -39,7 +39,7 @@ resources:
       memory: 200Mi
 tests:
 - as: krkn-hub-tests-aro-413
-  cron: 0 8 */2 * *
+  cron: 58 21 * * 6
   steps:
     cluster_profile: azure-qe
     observers:

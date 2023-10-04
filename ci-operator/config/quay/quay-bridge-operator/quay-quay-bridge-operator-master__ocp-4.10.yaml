@@ -1,6 +1,6 @@
 base_images:
   cli:
-    name: "4.10"
+    name: '4.10'
     namespace: ocp
     tag: cli
   ocp_builder_rhel-8-golang-1.20-openshift-4.14:
@@ -10,7 +10,7 @@ base_images:
   ubi:
     name: ubi
     namespace: ocp
-    tag: "8"
+    tag: '8'
 build_root:
   image_stream_tag:
     name: builder
@@ -40,12 +40,13 @@ operator:
     context_dir: bundle/downstream/
     dockerfile_path: Dockerfile
   substitutions:
-  - pullspec: registry-proxy.engineering.redhat.com/rh-osbs/quay-quay-bridge-operator-rhel8:v3.6.0
+  - pullspec: 
+      registry-proxy.engineering.redhat.com/rh-osbs/quay-quay-bridge-operator-rhel8:v3.6.0
     with: quay-bridge-operator
 releases:
   latest:
     integration:
-      name: "4.10"
+      name: '4.10'
       namespace: ocp
 resources:
   '*':
@@ -86,7 +87,7 @@ tests:
           memory: 200Mi
     workflow: optional-operators-ci-aws
 - as: nightly-quay-3-10-unstable-e2e
-  cron: 2 12 12 */12 *
+  cron: 7 10 8,21 * *
   steps:
     cluster_profile: aws
     dependencies:

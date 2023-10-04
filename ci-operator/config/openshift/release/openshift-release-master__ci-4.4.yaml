@@ -4,12 +4,12 @@ releases:
       product: ocp
       relative: 1
       stream: ci
-      version: "4.4"
+      version: '4.4'
   latest:
     candidate:
       product: ocp
       stream: ci
-      version: "4.4"
+      version: '4.4'
 resources:
   '*':
     requests:
@@ -17,34 +17,34 @@ resources:
       memory: 200Mi
 tests:
 - as: e2e-gcp-upgrade
-  cron: 34 5 10 */12 *
+  cron: 43 4 7,21 * *
   steps:
     cluster_profile: gcp
     workflow: openshift-upgrade-gcp
 - as: e2e-azure-upgrade
-  cron: 45 18 24 */12 *
+  cron: 5 4 8,24 * *
   steps:
     cluster_profile: azure-2
     env:
       BASE_DOMAIN: ci2.azure.devcluster.openshift.com
     workflow: openshift-upgrade-azure
 - as: e2e-aws
-  cron: 10 11 4 */12 *
+  cron: 52 7 10,25 * *
   steps:
     cluster_profile: aws
     workflow: openshift-e2e-aws
 - as: e2e-gcp
-  cron: 32 17 9 */12 *
+  cron: 28 9 8,21 * *
   steps:
     cluster_profile: gcp
     workflow: openshift-e2e-gcp
 - as: e2e-aws-sdn-multitenant
-  cron: 46 11 5 */12 *
+  cron: 17 9 6,25 * *
   steps:
     cluster_profile: aws
     workflow: openshift-e2e-aws-sdn-multi
 - as: e2e-aws-serial
-  cron: 7 12 18 */12 *
+  cron: 11 5 5,25 * *
   steps:
     cluster_profile: aws
     workflow: openshift-e2e-aws-serial

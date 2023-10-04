@@ -1,14 +1,14 @@
 base_images:
   base:
-    name: "4.5"
+    name: '4.5'
     namespace: ocp
     tag: base
   cluster-logging-operator-e2e:
-    name: "4.5"
+    name: '4.5'
     namespace: ocp
     tag: cluster-logging-operator-e2e
   console-tests:
-    name: "4.5"
+    name: '4.5'
     namespace: ocp
     tag: console-tests
   dev-scripts:
@@ -16,7 +16,7 @@ base_images:
     namespace: ocp-kni
     tag: dev-scripts
   upi-installer:
-    name: "4.5"
+    name: '4.5'
     namespace: ocp
     tag: upi-installer
 releases:
@@ -25,12 +25,12 @@ releases:
       product: ocp
       relative: 1
       stream: nightly
-      version: "4.5"
+      version: '4.5'
   latest:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.5"
+      version: '4.5'
 resources:
   '*':
     requests:
@@ -39,19 +39,19 @@ resources:
 tests:
 - as: e2e-metal-ipi
   cluster: build05
-  cron: 46 4 4 */12 *
+  cron: 53 1 7,17 * *
   steps:
     cluster_profile: equinix-ocp-metal
     workflow: baremetalds-e2e
 - as: e2e-metal-ipi-ipv4
   cluster: build05
-  cron: 27 0 17 */12 *
+  cron: 46 7 7,24 * *
   steps:
     cluster_profile: equinix-ocp-metal
     workflow: baremetalds-e2e-ipv4
 - as: e2e-metal-ipi-compact
   cluster: build05
-  cron: 43 14 19 */12 *
+  cron: 35 2 7,15 * *
   steps:
     cluster_profile: equinix-ocp-metal
     env:
@@ -60,24 +60,24 @@ tests:
         NUM_WORKERS=0
     workflow: baremetalds-e2e
 - as: e2e-aws-proxy
-  cron: 15 12 25 */12 *
+  cron: 53 3 9,15 * *
   steps:
     cluster_profile: aws
     workflow: openshift-e2e-aws-proxy
 - as: e2e-aws
-  cron: 36 16 5 */12 *
+  cron: 46 7 6,16 * *
   steps:
     cluster_profile: aws-2
     env:
       BASE_DOMAIN: aws-2.ci.openshift.org
     workflow: openshift-e2e-aws
 - as: e2e-gcp
-  cron: 20 5 12 */12 *
+  cron: 46 3 10,18 * *
   steps:
     cluster_profile: gcp
     workflow: openshift-e2e-gcp
 - as: console-aws
-  cron: 15 1 4 */12 *
+  cron: 14 6 7,25 * *
   steps:
     cluster_profile: aws-2
     env:
@@ -95,7 +95,7 @@ tests:
           memory: 200Mi
     workflow: ipi-aws
 - as: cluster-logging-operator-e2e
-  cron: 52 3 7 */12 *
+  cron: 53 4 6,17 * *
   steps:
     cluster_profile: aws-2
     env:
@@ -114,81 +114,81 @@ tests:
           memory: 200Mi
     workflow: ipi-aws
 - as: e2e-azure-fips
-  cron: 52 15 15 */12 *
+  cron: 11 9 5,21 * *
   steps:
     cluster_profile: azure-2
     env:
       BASE_DOMAIN: ci2.azure.devcluster.openshift.com
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-azure-pre
     - ref: fips-check
     workflow: openshift-e2e-azure
 - as: e2e-aws-fips
-  cron: 36 21 13 */12 *
+  cron: 34 5 5,20 * *
   steps:
     cluster_profile: aws-2
     env:
       BASE_DOMAIN: aws-2.ci.openshift.org
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-aws-pre
     - ref: fips-check
     workflow: openshift-e2e-aws
 - as: e2e-gcp-fips
-  cron: 57 5 9 */12 *
+  cron: 24 4 6,21 * *
   steps:
     cluster_profile: gcp
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-gcp-pre
     - ref: fips-check
     workflow: openshift-e2e-gcp
 - as: e2e-azure-fips-serial
-  cron: 50 8 14 */12 *
+  cron: 12 9 5,18 * *
   steps:
     cluster_profile: azure-2
     env:
       BASE_DOMAIN: ci2.azure.devcluster.openshift.com
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
       TEST_SUITE: openshift/conformance/serial
     pre:
     - chain: ipi-azure-pre
     - ref: fips-check
     workflow: openshift-e2e-azure
 - as: e2e-aws-fips-serial
-  cron: 23 1 2 */12 *
+  cron: 28 8 10,25 * *
   steps:
     cluster_profile: aws-2
     env:
       BASE_DOMAIN: aws-2.ci.openshift.org
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
       TEST_SUITE: openshift/conformance/serial
     pre:
     - chain: ipi-aws-pre
     - ref: fips-check
     workflow: openshift-e2e-aws
 - as: e2e-gcp-fips-serial
-  cron: 50 7 20 */12 *
+  cron: 47 8 9,24 * *
   steps:
     cluster_profile: gcp
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
       TEST_SUITE: openshift/conformance/serial
     pre:
     - chain: ipi-gcp-pre
     - ref: fips-check
     workflow: openshift-e2e-gcp
 - as: e2e-aws-serial
-  cron: 12 7 21 */12 *
+  cron: 39 8 8,25 * *
   steps:
     cluster_profile: aws-2
     env:
       BASE_DOMAIN: aws-2.ci.openshift.org
     workflow: openshift-e2e-aws-serial
 - as: e2e-azure
-  cron: 31 9 14 */12 *
+  cron: 24 5 8,15 * *
   steps:
     cluster_profile: azure-2
     env:

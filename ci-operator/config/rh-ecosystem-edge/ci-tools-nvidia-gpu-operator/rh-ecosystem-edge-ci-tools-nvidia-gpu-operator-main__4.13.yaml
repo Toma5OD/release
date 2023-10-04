@@ -11,7 +11,7 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     limits:
@@ -27,7 +27,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h30m0s
-    version: "4.13"
+    version: '4.13'
   steps:
     test:
     - as: scale-gpu-nodes
@@ -53,7 +53,7 @@ tests:
           cpu: 2000m
           memory: 2Gi
 - as: nvidia-gpu-operator-e2e-master
-  cron: 0 */23 * * *
+  cron: 10 7 * * 7
   steps:
     cluster_profile: aws
     test:
@@ -81,7 +81,7 @@ tests:
           memory: 2Gi
     workflow: ipi-aws
 - as: nvidia-gpu-operator-e2e-23-3-x
-  cron: 0 */23 * * *
+  cron: 49 6 * * 7
   steps:
     cluster_profile: aws
     test:
@@ -109,7 +109,7 @@ tests:
           memory: 2Gi
     workflow: ipi-aws
 - as: nvidia-gpu-operator-e2e-23-6-x
-  cron: 0 */23 * * *
+  cron: 6 12 * * 6
   steps:
     cluster_profile: aws
     test:
@@ -140,4 +140,4 @@ zz_generated_metadata:
   branch: main
   org: rh-ecosystem-edge
   repo: ci-tools-nvidia-gpu-operator
-  variant: "4.13"
+  variant: '4.13'

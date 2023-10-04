@@ -1,10 +1,10 @@
 base_images:
   ansible:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: ansible
   cli:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: cli
   dev-scripts:
@@ -12,35 +12,35 @@ base_images:
     namespace: ocp-kni
     tag: dev-scripts
   hypershift-operator:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: hypershift-operator
   openstack-installer:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: openstack-installer
   tests-private:
     name: tests-private
     namespace: ci
-    tag: "4.13"
+    tag: '4.13'
   tests-private-postupg:
     name: tests-private
     namespace: ci
-    tag: "4.13"
+    tag: '4.13'
   tests-private-preupg:
     name: tests-private
     namespace: ci
-    tag: "4.13"
+    tag: '4.13'
   tests-private-ui:
     name: tests-private-ui
     namespace: ci
-    tag: "4.13"
+    tag: '4.13'
   tools:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: tools
   upi-installer:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: upi-installer
   verification-tests:
@@ -57,27 +57,27 @@ releases:
     release:
       architecture: arm64
       channel: candidate
-      version: "4.13"
+      version: '4.13'
   latest:
     release:
       architecture: amd64
       channel: candidate
-      version: "4.13"
+      version: '4.13'
   target:
     release:
       architecture: multi
       channel: candidate
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     limits:
       memory: 8Gi
     requests:
-      cpu: "1"
+      cpu: '1'
       memory: 4Gi
 tests:
 - as: aws-ipi-disconnected-private-sno-f14
-  cron: 29 11 7,22 * *
+  cron: 52 16 * * 6
   steps:
     cluster_profile: aws-qe
     dependencies:
@@ -91,7 +91,7 @@ tests:
     - chain: cucushift-installer-check-cluster-health
     workflow: cucushift-installer-rehearse-aws-ipi-disconnected-private-sno
 - as: aws-ipi-disconnected-sts-ep-f14
-  cron: 35 17 15,30 * *
+  cron: 10 11 * * 7
   steps:
     cluster_profile: aws-qe
     dependencies:
@@ -103,9 +103,10 @@ tests:
       OCP_ARCH: arm64
     test:
     - chain: cucushift-installer-check-cluster-health
-    workflow: cucushift-installer-rehearse-aws-ipi-disconnected-private-cco-manual-security-token-service-private-s3-with-ep-sts-ec2-elb
+    workflow: 
+      cucushift-installer-rehearse-aws-ipi-disconnected-private-cco-manual-security-token-service-private-s3-with-ep-sts-ec2-elb
 - as: aws-ipi-ovn-ipsec-to-multiarch-f14
-  cron: 35 14 5,20 * *
+  cron: 58 6 * * 7
   steps:
     cluster_profile: aws-qe
     dependencies:
@@ -125,7 +126,7 @@ tests:
     - chain: openshift-upgrade-qe-test-arch-migration
     workflow: cucushift-installer-rehearse-aws-ipi-ovn-ipsec
 - as: aws-ipi-proxy-sts-f14
-  cron: 38 10 15,30 * *
+  cron: 21 8 * * 6
   steps:
     cluster_profile: aws-qe
     dependencies:
@@ -139,7 +140,7 @@ tests:
     - chain: cucushift-installer-check-cluster-health
     workflow: cucushift-installer-rehearse-aws-ipi-proxy-cco-manual-security-token-service
 - as: aws-ipi-usertags-f14
-  cron: 22 2 1,16 * *
+  cron: 16 2 * * 7
   steps:
     cluster_profile: aws-qe
     dependencies:
@@ -153,7 +154,7 @@ tests:
     - chain: cucushift-installer-check-cluster-health
     workflow: cucushift-installer-rehearse-aws-ipi-usertags
 - as: azure-ipi-disconnected-fullyprivate-f14
-  cron: 33 5 8,23 * *
+  cron: 56 15 * * 7
   steps:
     cluster_profile: azure-qe
     dependencies:
@@ -166,7 +167,7 @@ tests:
     - chain: cucushift-installer-check-cluster-health
     workflow: cucushift-installer-rehearse-azure-ipi-disconnected-fullyprivate
 - as: azure-ipi-fullyprivate-proxy-f14
-  cron: 26 1 10,25 * *
+  cron: 56 20 * * 7
   steps:
     cluster_profile: azure-qe
     dependencies:
@@ -179,7 +180,7 @@ tests:
     - chain: cucushift-installer-check-cluster-health
     workflow: cucushift-installer-rehearse-azure-ipi-fullyprivate-proxy
 - as: azure-ipi-to-multiarch-f14
-  cron: 12 9 10,25 * *
+  cron: 38 13 * * 7
   steps:
     cluster_profile: azure-qe
     dependencies:
@@ -199,14 +200,14 @@ tests:
     workflow: cucushift-installer-rehearse-azure-ipi
 - as: baremetal-upi-to-multiarch-f7
   cluster: build05
-  cron: 30 21 2,14 * *
+  cron: 38 12 * * 6
   steps:
     cluster_profile: equinix-ocp-metal-qe
     dependencies:
       OPENSHIFT_INSTALL_RELEASE_IMAGE_OVERRIDE: release:arm64-latest
     env:
       ADDITIONAL_WORKER_ARCHITECTURE: x86_64
-      ADDITIONAL_WORKERS: "2"
+      ADDITIONAL_WORKERS: '2'
       AUX_HOST: openshift-qe-bastion.arm.eng.rdu2.redhat.com
       SCALE_IN_ARCHITECTURES: aarch64
       UPGRADE_CHECK_RUN_TAGS: '@upgrade-check and @4.13 and @baremetal-upi and @heterogeneous
@@ -214,8 +215,8 @@ tests:
       UPGRADE_PRE_RUN_TAGS: '@upgrade-prepare and @4.13 and @baremetal-upi and @heterogeneous
         and @network-ovnkubernetes and not @fips'
       architecture: arm64
-      masters: "3"
-      workers: "2"
+      masters: '3'
+      workers: '2'
     test:
     - chain: openshift-upgrade-qe-test-arch-migration-upi
     workflow: baremetal-lab-upi

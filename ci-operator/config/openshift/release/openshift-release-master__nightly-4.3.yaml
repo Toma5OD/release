@@ -1,6 +1,6 @@
 base_images:
   console-tests:
-    name: "4.3"
+    name: '4.3'
     namespace: ocp
     tag: console-tests
 releases:
@@ -9,12 +9,12 @@ releases:
       product: ocp
       relative: 1
       stream: nightly
-      version: "4.3"
+      version: '4.3'
   latest:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.3"
+      version: '4.3'
 resources:
   '*':
     requests:
@@ -22,7 +22,7 @@ resources:
       memory: 200Mi
 tests:
 - as: console-aws
-  cron: 54 23 16 */12 *
+  cron: 39 6 10,19 * *
   steps:
     cluster_profile: aws
     test:
@@ -38,97 +38,97 @@ tests:
           memory: 200Mi
     workflow: ipi-aws
 - as: e2e-azure-fips
-  cron: 22 16 22 */12 *
+  cron: 1 9 10,18 * *
   steps:
     cluster_profile: azure-2
     env:
       BASE_DOMAIN: ci2.azure.devcluster.openshift.com
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-azure-pre
     - ref: fips-check
     workflow: openshift-e2e-azure
 - as: e2e-aws-fips
-  cron: 13 19 21 */12 *
+  cron: 47 2 6,17 * *
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-aws-pre
     - ref: fips-check
     workflow: openshift-e2e-aws
 - as: e2e-gcp-fips
-  cron: 36 17 25 */12 *
+  cron: 25 7 6,22 * *
   steps:
     cluster_profile: gcp
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-gcp-pre
     - ref: fips-check
     workflow: openshift-e2e-gcp
 - as: e2e-azure-fips-serial
-  cron: 48 13 10 */12 *
+  cron: 32 2 9,22 * *
   steps:
     cluster_profile: azure-2
     env:
       BASE_DOMAIN: ci2.azure.devcluster.openshift.com
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
       TEST_SUITE: openshift/conformance/serial
     pre:
     - chain: ipi-azure-pre
     - ref: fips-check
     workflow: openshift-e2e-azure
 - as: e2e-aws-fips-serial
-  cron: 48 16 6 */12 *
+  cron: 52 4 5,23 * *
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
       TEST_SUITE: openshift/conformance/serial
     pre:
     - chain: ipi-aws-pre
     - ref: fips-check
     workflow: openshift-e2e-aws
 - as: e2e-gcp-fips-serial
-  cron: 22 9 12 */12 *
+  cron: 51 5 7,19 * *
   steps:
     cluster_profile: gcp
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
       TEST_SUITE: openshift/conformance/serial
     pre:
     - chain: ipi-gcp-pre
     - ref: fips-check
     workflow: openshift-e2e-gcp
 - as: e2e-gcp
-  cron: 3 11 8 */12 *
+  cron: 51 10 9,21 * *
   steps:
     cluster_profile: gcp
     workflow: openshift-e2e-gcp
 - as: e2e-aws-fips-upgrade
-  cron: 48 17 9 */12 *
+  cron: 40 1 10,17 * *
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "true"
+      FIPS_ENABLED: 'true'
     pre:
     - chain: ipi-aws-pre
     - ref: fips-check
     workflow: openshift-upgrade-aws
 - as: e2e-aws
-  cron: 41 5 24 */12 *
+  cron: 18 4 8,17 * *
   steps:
     cluster_profile: aws
     workflow: openshift-e2e-aws
 - as: e2e-aws-serial
-  cron: 17 12 16 */12 *
+  cron: 33 10 7,23 * *
   steps:
     cluster_profile: aws
     workflow: openshift-e2e-aws-serial
 - as: e2e-azure
-  cron: 37 19 12 */12 *
+  cron: 17 4 9,15 * *
   steps:
     cluster_profile: azure-2
     env:

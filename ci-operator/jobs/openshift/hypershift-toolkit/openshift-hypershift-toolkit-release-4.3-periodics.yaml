@@ -1,7 +1,7 @@
 periodics:
 - agent: kubernetes
   cluster: build04
-  cron: 35 23 2 */12 *
+  cron: 20 2 5,19 * *
   decorate: true
   extra_refs:
   - base_ref: release-4.3
@@ -21,7 +21,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m

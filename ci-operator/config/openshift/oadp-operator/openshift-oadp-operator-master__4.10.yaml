@@ -25,7 +25,7 @@ releases:
   latest:
     release:
       channel: fast
-      version: "4.10"
+      version: '4.10'
 resources:
   '*':
     limits:
@@ -56,7 +56,7 @@ tests:
           cpu: 100m
           memory: 200Mi
 - as: operator-unit-test-periodic
-  cron: 0 4 * * *
+  cron: 18 7 5,18 * *
   steps:
     test:
     - as: unit-periodic
@@ -139,7 +139,7 @@ tests:
           memory: 512Mi
     workflow: optional-operators-ci-gcp
 - as: operator-e2e-aws-periodic-slack
-  cron: 0 4 * * *
+  cron: 36 8 7,16 * *
   steps:
     cluster_profile: aws
     dependencies:
@@ -164,7 +164,7 @@ tests:
           memory: 512Mi
     workflow: optional-operators-ci-aws
 - as: operator-e2e-gcp-periodic-slack
-  cron: 0 4 * * *
+  cron: 44 6 10,19 * *
   steps:
     cluster_profile: gcp
     dependencies:
@@ -189,7 +189,7 @@ tests:
           memory: 512Mi
     workflow: optional-operators-ci-gcp
 - as: operator-e2e-azure-periodic-slack
-  cron: 0 4 * * *
+  cron: 54 6 6,18 * *
   steps:
     cluster_profile: azure4
     dependencies:
@@ -217,4 +217,4 @@ zz_generated_metadata:
   branch: master
   org: openshift
   repo: oadp-operator
-  variant: "4.10"
+  variant: '4.10'

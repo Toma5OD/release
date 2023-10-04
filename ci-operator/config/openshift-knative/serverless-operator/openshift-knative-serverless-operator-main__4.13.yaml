@@ -1,10 +1,10 @@
 base_images:
   base:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: base
   cli:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: cli
   openshift_eventing-istio-src_knative-v1.10:
@@ -28,7 +28,7 @@ base_images:
     namespace: openshift
     tag: golang-1.19
   opm:
-    name: "4.13"
+    name: '4.13'
     namespace: origin
     tag: operator-registry
 build_root:
@@ -101,7 +101,7 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     limits:
@@ -117,7 +117,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 2h0m0s
-    version: "4.13"
+    version: '4.13'
   skip_if_only_changed: test/ui
   steps:
     allow_skip_on_success: true
@@ -146,7 +146,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 2h0m0s
-    version: "4.13"
+    version: '4.13'
   optional: true
   skip_if_only_changed: test/ui
   steps:
@@ -176,7 +176,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 2h0m0s
-    version: "4.13"
+    version: '4.13'
   optional: true
   skip_if_only_changed: test/ui
   steps:
@@ -206,8 +206,8 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 2h0m0s
-    version: "4.13"
-  cron: 0 0,12 * * *
+    version: '4.13'
+  cron: 24 5 * * 7
   steps:
     test:
     - as: serverless-e2e
@@ -234,8 +234,8 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 2h0m0s
-    version: "4.13"
-  cron: 0 4,16 * * *
+    version: '4.13'
+  cron: 43 7 * * 6
   steps:
     test:
     - as: serverless-kafka-e2e
@@ -262,8 +262,8 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 2h0m0s
-    version: "4.13"
-  cron: 0 2,14 * * *
+    version: '4.13'
+  cron: 2 8 * * 7
   steps:
     test:
     - as: serverless-e2e
@@ -280,7 +280,7 @@ tests:
         limits:
           memory: 6Gi
         requests:
-          cpu: "4"
+          cpu: '4'
           memory: 6Gi
     workflow: generic-claim
 - as: upgrade-tests-aws-ocp-413
@@ -290,7 +290,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 2h0m0s
-    version: "4.13"
+    version: '4.13'
   optional: true
   skip_if_only_changed: test/ui
   steps:
@@ -310,7 +310,7 @@ tests:
         limits:
           memory: 6Gi
         requests:
-          cpu: "4"
+          cpu: '4'
           memory: 6Gi
     workflow: generic-claim
 - as: e2e-mesh-ocp-413-continuous
@@ -320,8 +320,8 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 3h0m0s
-    version: "4.13"
-  cron: 0 4,16 * * *
+    version: '4.13'
+  cron: 57 19 * * 6
   steps:
     test:
     - as: serverless-e2e
@@ -350,7 +350,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 3h0m0s
-    version: "4.13"
+    version: '4.13'
   optional: true
   steps:
     allow_skip_on_success: true
@@ -369,7 +369,7 @@ tests:
         limits:
           memory: 6Gi
         requests:
-          cpu: "4"
+          cpu: '4'
           memory: 6Gi
       timeout: 5h0m0s
     workflow: generic-claim
@@ -381,7 +381,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 2h0m0s
-    version: "4.13"
+    version: '4.13'
   run_if_changed: test/ui
   steps:
     test:
@@ -409,8 +409,8 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 2h0m0s
-    version: "4.13"
-  cron: 0 6,18 * * *
+    version: '4.13'
+  cron: 6 14 * * 7
   steps:
     test:
     - as: serverless-ui
@@ -437,8 +437,8 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 2h0m0s
-    version: "4.13"
-  cron: 0 8,20 * * *
+    version: '4.13'
+  cron: 56 0 * * 7
   steps:
     test:
     - as: serverless-kitchensink-e2e
@@ -466,7 +466,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 2h0m0s
-    version: "4.13"
+    version: '4.13'
   optional: true
   steps:
     allow_skip_on_success: true
@@ -485,7 +485,7 @@ tests:
         limits:
           memory: 6Gi
         requests:
-          cpu: "4"
+          cpu: '4'
           memory: 6Gi
     workflow: generic-claim
 - as: upgrade-kitchensink-ocp-413
@@ -495,7 +495,7 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 2h0m0s
-    version: "4.13"
+    version: '4.13'
   optional: true
   steps:
     allow_skip_on_success: true
@@ -514,11 +514,11 @@ tests:
         limits:
           memory: 6Gi
         requests:
-          cpu: "4"
+          cpu: '4'
           memory: 6Gi
     workflow: generic-claim
 zz_generated_metadata:
   branch: main
   org: openshift-knative
   repo: serverless-operator
-  variant: "4.13"
+  variant: '4.13'

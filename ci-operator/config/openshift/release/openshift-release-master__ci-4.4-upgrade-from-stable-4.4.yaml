@@ -2,12 +2,12 @@ releases:
   initial:
     release:
       channel: candidate
-      version: "4.4"
+      version: '4.4'
   latest:
     candidate:
       product: ocp
       stream: ci
-      version: "4.4"
+      version: '4.4'
 resources:
   '*':
     requests:
@@ -15,7 +15,7 @@ resources:
       memory: 200Mi
 tests:
 - as: e2e-aws-upgrade
-  cron: 11 16 1 */12 *
+  cron: 28 8 9,23 * *
   steps:
     cluster_profile: aws
     workflow: openshift-upgrade-aws

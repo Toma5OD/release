@@ -1,6 +1,6 @@
 base_images:
   base:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: base
   ocp_builder_rhel-8-golang-1.19-openshift-4.13:
@@ -23,12 +23,12 @@ releases:
       architecture: arm64
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
   latest:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     limits:
@@ -38,7 +38,6 @@ resources:
       memory: 200Mi
 tests:
 - as: e2e-aws
-  interval: 24h
   steps:
     cluster_profile: aws
     test:
@@ -51,8 +50,8 @@ tests:
           cpu: 100m
       timeout: 3h0m0s
     workflow: ipi-aws
+  cron: 50 21 * * 7
 - as: e2e-aws-arm
-  interval: 24h
   steps:
     cluster_profile: aws-arm64
     dependencies:
@@ -69,8 +68,8 @@ tests:
           cpu: 100m
       timeout: 3h0m0s
     workflow: ipi-aws
+  cron: 51 17 * * 7
 - as: e2e-azure
-  interval: 24h
   steps:
     cluster_profile: azure4
     test:
@@ -83,8 +82,8 @@ tests:
           cpu: 100m
       timeout: 3h0m0s
     workflow: ipi-azure
+  cron: 49 13 * * 6
 - as: e2e-gcp
-  interval: 24h
   steps:
     cluster_profile: gcp
     test:
@@ -97,6 +96,7 @@ tests:
           cpu: 100m
       timeout: 3h0m0s
     workflow: ipi-gcp
+  cron: 57 19 * * 7
 zz_generated_metadata:
   branch: release-4.13
   org: openshift

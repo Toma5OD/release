@@ -2,10 +2,9 @@ periodics:
 - agent: kubernetes
   cluster: build02
   decorate: true
-  interval: 48h
   labels:
-    job-release: "4.13"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.13'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: release-openshift-ocp-installer-e2e-azure-serial-4.13
   spec:
     containers:
@@ -26,7 +25,7 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
         value: registry.ci.openshift.org/ocp/release:4.13
       - name: BRANCH
-        value: "4.13"
+        value: '4.13'
       - name: CLUSTER_TYPE
         value: azure4
       - name: CONFIG_SPEC
@@ -56,7 +55,7 @@ periodics:
         value: TEST_SUITE=openshift/conformance/serial run-tests
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -99,15 +98,15 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  cron: 13 2 5,25 * *
 - agent: kubernetes
   cluster: build01
   decorate: true
-  interval: 48h
   labels:
     job-env: aws
-    job-release: "4.13"
+    job-release: '4.13'
     job-test: e2e
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: release-openshift-origin-installer-e2e-aws-shared-vpc-4.13
   spec:
     containers:
@@ -128,7 +127,7 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
         value: registry.ci.openshift.org/ocp/release:4.13-ci
       - name: BRANCH
-        value: "4.13"
+        value: '4.13'
       - name: CLUSTER_TYPE
         value: aws
       - name: CLUSTER_VARIANT
@@ -169,7 +168,7 @@ periodics:
         value: TEST_SUITE=openshift/conformance/parallel run-tests
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -212,13 +211,13 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  cron: 17 7 5,22 * *
 - agent: kubernetes
   cluster: build04
   decorate: true
-  interval: 48h
   labels:
-    job-release: "4.13"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.13'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: release-openshift-origin-installer-e2e-gcp-shared-vpc-4.13
   spec:
     containers:
@@ -239,7 +238,7 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
         value: registry.ci.openshift.org/ocp/release:4.13-ci
       - name: BRANCH
-        value: "4.13"
+        value: '4.13'
       - name: CLUSTER_TYPE
         value: gcp
       - name: CLUSTER_VARIANT
@@ -280,7 +279,7 @@ periodics:
         value: TEST_SUITE=openshift/conformance/parallel run-tests
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -325,13 +324,13 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  cron: 57 7 5,16 * *
 - agent: kubernetes
   cluster: build02
   decorate: true
-  interval: 48h
   labels:
-    job-release: "4.13"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.13'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: release-openshift-origin-installer-e2e-azure-shared-vpc-4.13
   spec:
     containers:
@@ -352,7 +351,7 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
         value: registry.ci.openshift.org/ocp/release:4.13-ci
       - name: BRANCH
-        value: "4.13"
+        value: '4.13'
       - name: CLUSTER_TYPE
         value: azure4
       - name: CLUSTER_VARIANT
@@ -393,7 +392,7 @@ periodics:
         value: TEST_SUITE=openshift/conformance/parallel run-tests
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -436,15 +435,15 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  cron: 20 3 10,24 * *
 - agent: kubernetes
   cluster: build01
   decorate: true
-  interval: 24h
   labels:
     job-env: aws
-    job-release: "4.13"
+    job-release: '4.13'
     job-test: e2e
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: release-openshift-origin-installer-e2e-aws-disruptive-4.13
   spec:
     containers:
@@ -465,7 +464,7 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
         value: registry.ci.openshift.org/ocp/release:4.13-ci
       - name: BRANCH
-        value: "4.13"
+        value: '4.13'
       - name: CLUSTER_TYPE
         value: aws
       - name: CONFIG_SPEC
@@ -493,7 +492,7 @@ periodics:
           run-tests
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -536,19 +535,20 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  cron: 7 1 7,16 * *
 - agent: kubernetes
   cluster: build01
   decorate: true
   decoration_config:
     timeout: 8h0m0s
-  interval: 24h
   labels:
     job-env: aws
-    job-release: "4.13"
+    job-release: '4.13'
     job-test: e2e
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
-    release.openshift.io/verify: "true"
-  name: release-openshift-origin-installer-e2e-aws-upgrade-4.10-to-4.11-to-4.12-to-4.13-ci
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
+    release.openshift.io/verify: 'true'
+  name: 
+    release-openshift-origin-installer-e2e-aws-upgrade-4.10-to-4.11-to-4.12-to-4.13-ci
   spec:
     containers:
     - args:
@@ -597,10 +597,10 @@ periodics:
         export CONFIG_SPEC="${CONFIG_SPEC/RELEASE_IMAGES/$next_0,$next_1,$next_2}"
 
         ci-operator $@
-      - ""
+      - ''
       env:
       - name: BRANCH
-        value: "4.10"
+        value: '4.10'
       - name: CLUSTER_TYPE
         value: aws
       - name: CONFIG_SPEC
@@ -637,7 +637,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -674,13 +674,13 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  cron: 1 2 5,18 * *
 - agent: kubernetes
   cluster: build01
   decorate: true
-  interval: 48h
   labels:
-    job-release: "4.13"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.13'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: release-openshift-ocp-installer-e2e-aws-mirrors-4.13
   spec:
     containers:
@@ -703,7 +703,7 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
         value: registry.ci.openshift.org/ocp/release:4.13
       - name: BRANCH
-        value: "4.13"
+        value: '4.13'
       - name: CLUSTER_TYPE
         value: aws
       - name: CLUSTER_VARIANT
@@ -733,7 +733,7 @@ periodics:
           TEST_SUITE=openshift/conformance/parallel run-tests
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -776,13 +776,13 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  cron: 47 6 7,16 * *
 - agent: kubernetes
   cluster: build01
   decorate: true
-  interval: 24h
   labels:
-    job-release: "4.13"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.13'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: release-openshift-ocp-installer-e2e-aws-csi-4.13
   spec:
     containers:
@@ -803,7 +803,7 @@ periodics:
       - name: RELEASE_IMAGE_LATEST
         value: registry.ci.openshift.org/ocp/release:4.13
       - name: BRANCH
-        value: "4.13"
+        value: '4.13'
       - name: CLUSTER_TYPE
         value: aws
       - name: JOB_NAME_SAFE
@@ -832,7 +832,7 @@ periodics:
               from: stable:aws-ebs-csi-driver-operator-test
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -875,3 +875,4 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  cron: 20 4 5,23 * *

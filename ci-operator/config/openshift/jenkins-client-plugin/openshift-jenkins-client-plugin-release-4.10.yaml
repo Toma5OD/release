@@ -1,6 +1,6 @@
 base_images:
   original_jenkins:
-    name: "4.10"
+    name: '4.10'
     namespace: ocp
     tag: jenkins
 build_root:
@@ -22,17 +22,17 @@ promotion:
     jenkins-client-plugin-tests: src
   excluded_images:
   - jenkins
-  name: "4.10"
+  name: '4.10'
   namespace: ocp
 releases:
   initial:
     integration:
-      name: "4.10"
+      name: '4.10'
       namespace: ocp
   latest:
     integration:
       include_built_images: true
-      name: "4.10"
+      name: '4.10'
       namespace: ocp
 resources:
   '*':
@@ -54,7 +54,7 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: e2e-aws-jenkins-client-plugin-continuous
-  cron: 58 9  * * 0
+  cron: 44 4 7,25 * *
   steps:
     cluster_profile: aws
     test:

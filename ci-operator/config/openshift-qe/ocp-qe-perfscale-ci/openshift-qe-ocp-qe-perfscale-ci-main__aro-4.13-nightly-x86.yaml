@@ -1,10 +1,10 @@
 base_images:
   cli:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: cli
   upi-installer:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: upi-installer
 build_root:
@@ -23,7 +23,7 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     requests:
@@ -31,36 +31,36 @@ resources:
       memory: 200Mi
 tests:
 - as: perfscale-aro-node-density-cni-6nodes-periodic
-  cron: 0 12 * * 3
+  cron: 35 9 * * 6
   steps:
     cluster_profile: azure-qe
     env:
       ARO_MASTER_VM_SIZE: Standard_D8s_v3
-      ARO_WORKER_COUNT: "6"
+      ARO_WORKER_COUNT: '6'
       ARO_WORKER_VM_SIZE: Standard_D8s_v3
     test:
     - chain: openshift-qe-node-density-cni
     workflow: openshift-qe-installer-azure-aro
 - as: perfscale-aro-node-density-heavy-6nodes-periodic
-  cron: 0 12 * * 3
+  cron: 48 16 * * 7
   steps:
     cluster_profile: azure-qe
     env:
       ARO_MASTER_VM_SIZE: Standard_D8s_v3
-      ARO_WORKER_COUNT: "6"
+      ARO_WORKER_COUNT: '6'
       ARO_WORKER_VM_SIZE: Standard_D8s_v3
     test:
     - chain: openshift-qe-node-density-heavy
     workflow: openshift-qe-installer-azure-aro
 - as: perfscale-aro-control-plane-6nodes-periodic
-  cron: 0 12 * * 4
+  cron: 28 11 * * 7
   steps:
     cluster_profile: azure-qe
     env:
       ARO_MASTER_VM_SIZE: Standard_D8s_v3
-      ARO_WORKER_COUNT: "6"
+      ARO_WORKER_COUNT: '6'
       ARO_WORKER_VM_SIZE: Standard_D8s_v3
-      ITERATION_MULTIPLIER_ENV: "9"
+      ITERATION_MULTIPLIER_ENV: '9'
     test:
     - chain: openshift-qe-control-plane
     workflow: openshift-qe-installer-azure-aro

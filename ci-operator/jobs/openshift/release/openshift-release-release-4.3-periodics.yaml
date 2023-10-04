@@ -4,7 +4,7 @@ periodics:
   cron: '@yearly'
   decorate: true
   labels:
-    job-release: "4.3"
+    job-release: '4.3'
   name: promote-release-openshift-machine-os-content-e2e-aws-4.3
   spec:
     containers:
@@ -55,14 +55,14 @@ periodics:
 
         # also tag the image into the ocp private stream
         oc tag "${to_quay}" "ocp-private/${BRANCH}-priv:${TAG}"
-      - ""
+      - ''
       env:
       - name: TAG_NS
         value: rhcos
       - name: TAG
         value: machine-os-content
       - name: BRANCH
-        value: "4.3"
+        value: '4.3'
       - name: TAG_SOURCE
         value: machine-os-content:$(BRANCH)
       - name: UNRESOLVED_CONFIG
@@ -105,7 +105,7 @@ periodics:
               workflow: openshift-e2e-aws
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -154,12 +154,13 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  promote: true
 - agent: kubernetes
   cluster: build02
   decorate: true
   interval: 8h
   labels:
-    job-release: "4.3"
+    job-release: '4.3'
   name: promote-release-openshift-machine-os-content-e2e-aws-4.3-s390x
   spec:
     containers:
@@ -199,14 +200,14 @@ periodics:
       - name: TAG
         value: machine-os-content
       - name: BRANCH
-        value: "4.3"
+        value: '4.3'
       - name: ARCH
         value: s390x
       - name: TAG_SOURCE
         value: machine-os-content:$(BRANCH)-$(ARCH)
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -237,12 +238,13 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  promote: true
 - agent: kubernetes
   cluster: build02
   decorate: true
   interval: 8h
   labels:
-    job-release: "4.3"
+    job-release: '4.3'
   name: promote-release-openshift-machine-os-content-e2e-aws-4.3-ppc64le
   spec:
     containers:
@@ -282,14 +284,14 @@ periodics:
       - name: TAG
         value: machine-os-content
       - name: BRANCH
-        value: "4.3"
+        value: '4.3'
       - name: ARCH
         value: ppc64le
       - name: TAG_SOURCE
         value: machine-os-content:$(BRANCH)-$(ARCH)
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -320,6 +322,7 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  promote: true
 - agent: kubernetes
   cluster: build02
   decorate: true
@@ -332,7 +335,7 @@ periodics:
     workdir: true
   interval: 2h
   labels:
-    job-release: "4.3"
+    job-release: '4.3'
   name: promote-release-openshift-okd-machine-os-content-e2e-aws-4.3
   spec:
     containers:
@@ -470,12 +473,12 @@ periodics:
       - name: TAG
         value: machine-os-content
       - name: BRANCH
-        value: "4.3"
+        value: '4.3'
       - name: TAG_SOURCE
         value: $(BRANCH):$(TAG)
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -506,16 +509,17 @@ periodics:
     - name: release-pull-secret
       secret:
         secretName: ci-pull-credentials
+  promote: true
 - agent: kubernetes
   cluster: build05
-  cron: 1 9 1 */12 *
+  cron: 32 6 6,25 * *
   decorate: true
   labels:
     job-env: aws
-    job-release: "4.3"
+    job-release: '4.3'
     job-test: e2e
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
-    release.openshift.io/verify: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
+    release.openshift.io/verify: 'true'
   name: release-openshift-origin-installer-e2e-aws-upgrade-4.2-to-4.3
   spec:
     containers:
@@ -532,7 +536,7 @@ periodics:
       - ci-operator
       env:
       - name: BRANCH
-        value: "4.2"
+        value: '4.2'
       - name: CLUSTER_TYPE
         value: aws
       - name: CONFIG_SPEC
@@ -567,7 +571,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -606,14 +610,14 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build05
-  cron: 9 21 2 */12 *
+  cron: 29 4 5,16 * *
   decorate: true
   labels:
     job-env: aws
-    job-release: "4.3"
+    job-release: '4.3'
     job-test: e2e
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
-    release.openshift.io/verify: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
+    release.openshift.io/verify: 'true'
   name: release-openshift-origin-installer-e2e-aws-upgrade-4.1-to-4.2-to-4.3-nightly
   spec:
     containers:
@@ -654,10 +658,10 @@ periodics:
         export RELEASE_IMAGE_LATEST=$( python -c 'from __future__ import print_function; import json,sys; print(json.load(open(sys.argv[1], "r"))["pullSpec"])' "${data}" )
 
         ci-operator $@
-      - ""
+      - ''
       env:
       - name: BRANCH
-        value: "4.2"
+        value: '4.2'
       - name: CLUSTER_TYPE
         value: aws
       - name: CONFIG_SPEC
@@ -695,7 +699,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -734,14 +738,14 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build05
-  cron: 21 4 4 */12 *
+  cron: 48 6 5,18 * *
   decorate: true
   labels:
     job-env: aws
-    job-release: "4.3"
+    job-release: '4.3'
     job-test: e2e
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
-    release.openshift.io/verify: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
+    release.openshift.io/verify: 'true'
   name: release-openshift-origin-installer-e2e-aws-upgrade-4.2-nightly-to-4.3-nightly
   spec:
     containers:
@@ -758,7 +762,7 @@ periodics:
       - ci-operator
       env:
       - name: BRANCH
-        value: "4.3"
+        value: '4.3'
       - name: CLUSTER_TYPE
         value: aws
       - name: CONFIG_SPEC
@@ -793,7 +797,7 @@ periodics:
               cluster_profile: "$(CLUSTER_TYPE)"
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -832,13 +836,13 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build05
-  cron: 7 23 6 */12 *
+  cron: 37 8 8,20 * *
   decorate: true
   labels:
     job-env: aws
-    job-release: "4.3"
+    job-release: '4.3'
     job-test: e2e
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: release-openshift-origin-installer-e2e-aws-upgrade-rollback-4.2-to-4.3
   spec:
     containers:
@@ -855,7 +859,7 @@ periodics:
       - ci-operator
       env:
       - name: BRANCH
-        value: "4.2"
+        value: '4.2'
       - name: CLUSTER_TYPE
         value: aws
       - name: CONFIG_SPEC
@@ -878,7 +882,7 @@ periodics:
               upgrade: true
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -917,13 +921,13 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build05
-  cron: 17 21 14 */12 *
+  cron: 13 8 9,22 * *
   decorate: true
   labels:
     job-env: aws
-    job-release: "4.3"
+    job-release: '4.3'
     job-test: e2e
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: release-openshift-origin-installer-e2e-aws-upgrade-rollback-4.3
   spec:
     containers:
@@ -940,7 +944,7 @@ periodics:
       - ci-operator
       env:
       - name: BRANCH
-        value: "4.3"
+        value: '4.3'
       - name: CLUSTER_TYPE
         value: aws
       - name: CONFIG_SPEC
@@ -963,7 +967,7 @@ periodics:
               upgrade: true
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1002,13 +1006,13 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
-  cron: 14 2 12 */12 *
+  cron: 17 5 10,16 * *
   decorate: true
   labels:
     job-env: gcp
-    job-release: "4.3"
+    job-release: '4.3'
     job-test: e2e
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: release-openshift-origin-installer-e2e-gcp-upgrade-4.3
   spec:
     containers:
@@ -1025,7 +1029,7 @@ periodics:
       - ci-operator
       env:
       - name: BRANCH
-        value: "4.3"
+        value: '4.3'
       - name: CLUSTER_TYPE
         value: gcp
       - name: CONFIG_SPEC
@@ -1048,7 +1052,7 @@ periodics:
               upgrade: true
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1089,13 +1093,13 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
-  cron: 44 7 14 */12 *
+  cron: 7 8 5,17 * *
   decorate: true
   labels:
     job-env: azure
-    job-release: "4.3"
+    job-release: '4.3'
     job-test: e2e
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: release-openshift-origin-installer-e2e-azure-upgrade-4.3
   spec:
     containers:
@@ -1112,7 +1116,7 @@ periodics:
       - ci-operator
       env:
       - name: BRANCH
-        value: "4.3"
+        value: '4.3'
       - name: CLUSTER_TYPE
         value: azure4
       - name: CONFIG_SPEC
@@ -1135,7 +1139,7 @@ periodics:
               upgrade: true
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m

@@ -8,7 +8,7 @@ periodics:
     org: openshift
     repo: osde2e
   labels:
-    pj-rehearse.openshift.io/can-be-rehearsed: "false"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'false'
   name: osde2e-rosa-prod-cleanup
   spec:
     containers:
@@ -19,7 +19,7 @@ periodics:
       - -c
       image: amazon/aws-cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -41,7 +41,7 @@ periodics:
     org: openshift
     repo: osde2e
   labels:
-    pj-rehearse.openshift.io/can-be-rehearsed: "false"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'false'
   name: osde2e-rosa-stage-cleanup
   spec:
     containers:
@@ -52,7 +52,7 @@ periodics:
       - -c
       image: amazon/aws-cli
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -74,7 +74,7 @@ periodics:
     org: openshift
     repo: osde2e
   labels:
-    pj-rehearse.openshift.io/can-be-rehearsed: "false"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'false'
   name: osde2e-stage-aws-addon-codeready-qe-operator
   spec:
     containers:
@@ -94,16 +94,16 @@ periodics:
       - name: CONFIGS
         value: aws,stage,test-harness
       - name: OCM_CCS
-        value: "true"
+        value: 'true'
       - name: POLLING_TIMEOUT
-        value: "7200"
+        value: '7200'
       - name: SECRET_LOCATIONS
         value: /usr/local/osde2e-common,/usr/local/crw-osd-token,/usr/local/ocm-aws-access
       - name: TEST_HARNESSES
         value: quay.io/crw/osd-e2e:nightly
       image: quay.io/app-sre/osde2e
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -137,7 +137,7 @@ periodics:
     org: openshift
     repo: osde2e
   labels:
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: osde2e-stage-aws-addon-integreatly-operator
   spec:
     containers:
@@ -162,22 +162,22 @@ periodics:
       - name: CONFIGS
         value: aws,stage,test-harness
       - name: HIBERNATE_AFTER_USE
-        value: "false"
+        value: 'false'
       - name: NUM_WORKER_NODES
-        value: "6"
+        value: '6'
       - name: OCM_CCS
-        value: "true"
+        value: 'true'
       - name: OCM_COMPUTE_MACHINE_TYPE
         value: m5.xlarge
       - name: POLLING_TIMEOUT
-        value: "7400"
+        value: '7400'
       - name: SECRET_LOCATIONS
         value: /usr/local/osde2e-common,/usr/local/integr8ly-ci-secrets
       - name: TEST_HARNESSES
         value: quay.io/integreatly/integreatly-operator-test-harness:osde2e
       image: quay.io/app-sre/osde2e
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -205,7 +205,7 @@ periodics:
     org: openshift
     repo: osde2e
   labels:
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: osde2e-stage-aws-addon-integreatly-operator-rhmi
   spec:
     containers:
@@ -229,20 +229,20 @@ periodics:
       - name: CONFIGS
         value: aws,stage,test-harness
       - name: HIBERNATE_AFTER_USE
-        value: "false"
+        value: 'false'
       - name: NUM_WORKER_NODES
-        value: "6"
+        value: '6'
       - name: OCM_CCS
-        value: "true"
+        value: 'true'
       - name: POLLING_TIMEOUT
-        value: "7400"
+        value: '7400'
       - name: SECRET_LOCATIONS
         value: /usr/local/osde2e-common,/usr/local/integr8ly-ci-secrets
       - name: TEST_HARNESSES
         value: quay.io/integreatly/integreatly-operator-test-harness:osde2e-rhmi
       image: quay.io/app-sre/osde2e
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -274,7 +274,7 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: addon
     ci.openshift.io/generator: prowgen
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-addon-example
   reporter_config:
     slack:
@@ -303,7 +303,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -379,7 +379,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -431,7 +431,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -483,7 +483,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -537,7 +537,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -614,7 +614,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -667,8 +667,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.10
     ci.openshift.io/generator: prowgen
-    job-release: "4.10"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.10'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.10-osd-aws
   spec:
     containers:
@@ -683,7 +683,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -730,8 +730,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.10
     ci.openshift.io/generator: prowgen
-    job-release: "4.10"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.10'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.10-osd-gcp
   spec:
     containers:
@@ -746,7 +746,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -793,8 +793,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.10
     ci.openshift.io/generator: prowgen
-    job-release: "4.10"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.10'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.10-rosa-classic-sts
   spec:
     containers:
@@ -809,7 +809,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -856,8 +856,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.11
     ci.openshift.io/generator: prowgen
-    job-release: "4.11"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.11'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.11-osd-aws
   spec:
     containers:
@@ -872,7 +872,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -919,8 +919,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.11
     ci.openshift.io/generator: prowgen
-    job-release: "4.11"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.11'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.11-osd-gcp
   spec:
     containers:
@@ -935,7 +935,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -982,8 +982,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.11
     ci.openshift.io/generator: prowgen
-    job-release: "4.11"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.11'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.11-rosa-classic-sts
   spec:
     containers:
@@ -998,7 +998,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1045,8 +1045,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.12
     ci.openshift.io/generator: prowgen
-    job-release: "4.12"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.12'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.12-osd-aws
   spec:
     containers:
@@ -1061,7 +1061,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1108,8 +1108,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.12
     ci.openshift.io/generator: prowgen
-    job-release: "4.12"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.12'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.12-osd-gcp
   spec:
     containers:
@@ -1124,7 +1124,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1171,8 +1171,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.12
     ci.openshift.io/generator: prowgen
-    job-release: "4.12"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.12'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.12-rosa-classic-sts
   spec:
     containers:
@@ -1187,7 +1187,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1234,8 +1234,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.12
     ci.openshift.io/generator: prowgen
-    job-release: "4.12"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.12'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.12-rosa-hcp
   spec:
     containers:
@@ -1250,7 +1250,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1297,8 +1297,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.13
     ci.openshift.io/generator: prowgen
-    job-release: "4.13"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.13'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.13-osd-aws
   spec:
     containers:
@@ -1313,7 +1313,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1360,8 +1360,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.13
     ci.openshift.io/generator: prowgen
-    job-release: "4.13"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.13'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.13-osd-gcp
   spec:
     containers:
@@ -1376,7 +1376,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1423,8 +1423,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.13
     ci.openshift.io/generator: prowgen
-    job-release: "4.13"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.13'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.13-rosa-classic-sts
   spec:
     containers:
@@ -1439,7 +1439,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1486,8 +1486,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.13
     ci.openshift.io/generator: prowgen
-    job-release: "4.13"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.13'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.13-rosa-hcp
   spec:
     containers:
@@ -1502,7 +1502,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1549,8 +1549,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.14
     ci.openshift.io/generator: prowgen
-    job-release: "4.14"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.14'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.14-osd-aws
   spec:
     containers:
@@ -1565,7 +1565,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1612,8 +1612,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.14
     ci.openshift.io/generator: prowgen
-    job-release: "4.14"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.14'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.14-osd-gcp
   spec:
     containers:
@@ -1628,7 +1628,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1675,8 +1675,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.14
     ci.openshift.io/generator: prowgen
-    job-release: "4.14"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.14'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.14-rosa-classic-sts
   spec:
     containers:
@@ -1691,7 +1691,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1738,8 +1738,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.15
     ci.openshift.io/generator: prowgen
-    job-release: "4.15"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.15'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.15-osd-aws
   spec:
     containers:
@@ -1754,7 +1754,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1801,8 +1801,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.15
     ci.openshift.io/generator: prowgen
-    job-release: "4.15"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.15'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.15-osd-gcp
   spec:
     containers:
@@ -1817,7 +1817,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1864,8 +1864,8 @@ periodics:
   labels:
     ci-operator.openshift.io/variant: nightly-4.15
     ci.openshift.io/generator: prowgen
-    job-release: "4.15"
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    job-release: '4.15'
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-nightly-4.15-rosa-classic-sts
   spec:
     containers:
@@ -1880,7 +1880,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -1926,8 +1926,9 @@ periodics:
     repo: osde2e
   labels:
     ci.openshift.io/generator: prowgen
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
-  name: periodic-ci-openshift-osde2e-main-osd-aws-upgrade-latest-default-y-minus-1-to-latest-default-y
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
+  name: 
+    periodic-ci-openshift-osde2e-main-osd-aws-upgrade-latest-default-y-minus-1-to-latest-default-y
   reporter_config:
     slack:
       channel: '#sd-cicd-alerts'
@@ -1952,7 +1953,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2004,8 +2005,9 @@ periodics:
     repo: osde2e
   labels:
     ci.openshift.io/generator: prowgen
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
-  name: periodic-ci-openshift-osde2e-main-osd-aws-upgrade-latest-default-y-plus-1-to-latest-y
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
+  name: 
+    periodic-ci-openshift-osde2e-main-osd-aws-upgrade-latest-default-y-plus-1-to-latest-y
   reporter_config:
     slack:
       channel: '#sd-cicd-alerts'
@@ -2030,7 +2032,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2082,8 +2084,9 @@ periodics:
     repo: osde2e
   labels:
     ci.openshift.io/generator: prowgen
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
-  name: periodic-ci-openshift-osde2e-main-osd-aws-upgrade-latest-default-y-to-latest-y-plus-1
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
+  name: 
+    periodic-ci-openshift-osde2e-main-osd-aws-upgrade-latest-default-y-to-latest-y-plus-1
   reporter_config:
     slack:
       channel: '#sd-cicd-alerts'
@@ -2108,7 +2111,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2160,8 +2163,9 @@ periodics:
     repo: osde2e
   labels:
     ci.openshift.io/generator: prowgen
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
-  name: periodic-ci-openshift-osde2e-main-osd-aws-upgrade-latest-default-z-minus-1-to-latest-default-z
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
+  name: 
+    periodic-ci-openshift-osde2e-main-osd-aws-upgrade-latest-default-z-minus-1-to-latest-default-z
   reporter_config:
     slack:
       channel: '#sd-cicd-alerts'
@@ -2186,7 +2190,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2238,7 +2242,7 @@ periodics:
     repo: osde2e
   labels:
     ci.openshift.io/generator: prowgen
-    pj-rehearse.openshift.io/can-be-rehearsed: "true"
+    pj-rehearse.openshift.io/can-be-rehearsed: 'true'
   name: periodic-ci-openshift-osde2e-main-rosa-stage-complete-e2e
   spec:
     containers:
@@ -2254,7 +2258,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2339,7 +2343,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m
@@ -2430,7 +2434,7 @@ periodics:
       - ci-operator
       image: ci-operator:latest
       imagePullPolicy: Always
-      name: ""
+      name: ''
       resources:
         requests:
           cpu: 10m

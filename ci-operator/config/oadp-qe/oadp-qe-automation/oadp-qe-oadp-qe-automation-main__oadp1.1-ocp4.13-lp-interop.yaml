@@ -1,6 +1,6 @@
 base_images:
   cli:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: cli
   mtc-python-client:
@@ -42,7 +42,7 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     requests:
@@ -50,7 +50,7 @@ resources:
       memory: 200Mi
 tests:
 - as: oadp-interop-aws
-  cron: 0 6 25 12 *
+  cron: 43 4 * * 7
   steps:
     cluster_profile: aws-cspi-qe
     env:

@@ -1,10 +1,10 @@
 base_images:
   ansible:
-    name: "4.12"
+    name: '4.12'
     namespace: ocp
     tag: ansible
   cli:
-    name: "4.12"
+    name: '4.12'
     namespace: ocp
     tag: cli
   dev-scripts:
@@ -14,17 +14,17 @@ base_images:
   tests-private-postupg:
     name: tests-private
     namespace: ci
-    tag: "4.12"
+    tag: '4.12'
   tests-private-preupg:
     name: tests-private
     namespace: ci
-    tag: "4.12"
+    tag: '4.12'
   tools:
-    name: "4.12"
+    name: '4.12'
     namespace: ocp
     tag: tools
   upi-installer:
-    name: "4.11"
+    name: '4.11'
     namespace: ocp
     tag: upi-installer
 releases:
@@ -32,24 +32,24 @@ releases:
     release:
       architecture: amd64
       channel: fast
-      version: "4.11"
+      version: '4.11'
   intermediate412:
     release:
       architecture: amd64
       channel: fast
-      version: "4.12"
+      version: '4.12'
   latest:
     candidate:
       architecture: amd64
       product: ocp
       stream: nightly
-      version: "4.10"
+      version: '4.10'
   target:
     candidate:
       architecture: amd64
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     requests:
@@ -57,7 +57,7 @@ resources:
       memory: 200Mi
 tests:
 - as: aro-f30
-  cron: 6 16 2 * *
+  cron: 51 1 7,16 * *
   steps:
     cluster_profile: azure-qe
     env:
@@ -65,7 +65,8 @@ tests:
       UPGRADE_PRE_RUN_TAGS: '@upgrade-prepare and @4.11 and @azure-ipi and not @fips'
     test:
     - as: set-upgrade-releases
-      commands: echo "${RELEASE_IMAGE_INTERMEDIATE411},${RELEASE_IMAGE_INTERMEDIATE412},${RELEASE_IMAGE_TARGET}"
+      commands: echo 
+        "${RELEASE_IMAGE_INTERMEDIATE411},${RELEASE_IMAGE_INTERMEDIATE412},${RELEASE_IMAGE_TARGET}"
         > ${SHARED_DIR}/upgrade-edge
       dependencies:
       - env: RELEASE_IMAGE_INTERMEDIATE411

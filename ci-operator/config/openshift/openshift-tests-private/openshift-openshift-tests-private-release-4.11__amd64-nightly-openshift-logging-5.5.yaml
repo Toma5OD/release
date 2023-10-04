@@ -1,10 +1,10 @@
 base_images:
   ansible:
-    name: "4.11"
+    name: '4.11'
     namespace: ocp
     tag: ansible
   cli:
-    name: "4.11"
+    name: '4.11'
     namespace: ocp
     tag: cli
   dev-scripts:
@@ -12,23 +12,23 @@ base_images:
     namespace: ocp-kni
     tag: dev-scripts
   openstack-installer:
-    name: "4.11"
+    name: '4.11'
     namespace: ocp
     tag: openstack-installer
   tests-private:
     name: tests-private
     namespace: ci
-    tag: "4.11"
+    tag: '4.11'
   tests-private-ui:
     name: tests-private-ui
     namespace: ci
-    tag: "4.11"
+    tag: '4.11'
   tools:
-    name: "4.11"
+    name: '4.11'
     namespace: ocp
     tag: tools
   upi-installer:
-    name: "4.11"
+    name: '4.11'
     namespace: ocp
     tag: upi-installer
 build_root:
@@ -42,17 +42,17 @@ releases:
       architecture: amd64
       product: ocp
       stream: nightly
-      version: "4.11"
+      version: '4.11'
 resources:
   '*':
     limits:
       memory: 8Gi
     requests:
-      cpu: "1"
+      cpu: '1'
       memory: 4Gi
 tests:
 - as: azure-ipi-fips-f14
-  cron: 5 9 13,28 * *
+  cron: 58 7 5,25 * *
   steps:
     cluster_profile: azure-qe
     env:
@@ -60,22 +60,22 @@ tests:
       CLO_SUB_CHANNEL: stable-5.5
       COMPUTE_NODE_TYPE: Standard_D4s_v3
       E2E_RUN_TAGS: '@logging5.5'
-      E2E_SKIP_TAGS: ""
+      E2E_SKIP_TAGS: ''
       EO_SUB_CHANNEL: stable-5.5
-      FILTERS_ADDITIONAL: ""
-      FIPS_ENABLED: "true"
-      FORCE_SUCCESS_EXIT: "true"
+      FILTERS_ADDITIONAL: ''
+      FIPS_ENABLED: 'true'
+      FORCE_SUCCESS_EXIT: 'true'
       LO_SUB_CHANNEL: stable-5.5
       LOGGING_INDEX_IMAGE: quay.io/openshift-qe-optional-operators/aosqe-index:log5.5
       SIZE_VARIANT: large
       TAG_VERSION: '@logging5.5'
-      TEST_ADDITIONAL: ""
+      TEST_ADDITIONAL: ''
       TEST_FILTERS: CPaasrunOnly;CPaasrunBoth
-      TEST_IMPORTANCE: ""
-      TEST_PARALLEL: "3"
-      TEST_ROSA_LOGIN_ENV: ""
+      TEST_IMPORTANCE: ''
+      TEST_PARALLEL: '3'
+      TEST_ROSA_LOGIN_ENV: ''
       TEST_SCENARIOS: sig-openshift-logging
-      TEST_TIMEOUT: "15"
+      TEST_TIMEOUT: '15'
     test:
     - ref: enable-qe-catalogsource-logging
     - ref: operatorhub-subscribe-elasticsearch-operator

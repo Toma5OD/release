@@ -1,6 +1,6 @@
 base_images:
   upi-installer:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: upi-installer
 build_root:
@@ -17,17 +17,17 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     limits:
       memory: 8Gi
     requests:
-      cpu: "1"
+      cpu: '1'
       memory: 4Gi
 tests:
 - as: servicemesh-aws-rosa-hypershift
-  cron: 0 10 25 12 *
+  cron: 15 5 * * 6
   steps:
     cluster_profile: aws-cspi-qe
     env:
@@ -44,7 +44,7 @@ tests:
       FIREWATCH_DEFAULT_JIRA_PROJECT: LPTOCPCI
       FIREWATCH_JIRA_SERVER: https://issues.redhat.com
       OCM_LOGIN_ENV: staging
-      OPENSHIFT_VERSION: "4.13"
+      OPENSHIFT_VERSION: '4.13'
       OPERATORS: |
         [
             {"name": "servicemeshoperator", "source": "redhat-operators", "channel": "stable", "install_namespace": "openshift-operators"}

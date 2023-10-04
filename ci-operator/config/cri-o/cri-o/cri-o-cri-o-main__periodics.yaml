@@ -19,12 +19,12 @@ images:
 releases:
   initial:
     integration:
-      name: "4.10"
+      name: '4.10'
       namespace: ocp
   latest:
     integration:
       include_built_images: true
-      name: "4.10"
+      name: '4.10'
       namespace: ocp
 resources:
   '*':
@@ -34,19 +34,19 @@ resources:
 test_binary_build_commands: "echo \"no test commands\" \n"
 tests:
 - as: setup-periodic
-  cron: 00 00 * * *
+  cron: 3 3 10,24 * *
   steps:
     cluster_profile: gcp
     workflow: cri-o-setup
 - as: evented-pleg-periodic
-  cron: 00 */6 * * *
+  cron: 55 7 8,22 * *
   steps:
     cluster_profile: gcp
     env:
-      EVENTED_PLEG: "true"
+      EVENTED_PLEG: 'true'
     workflow: cri-o-e2e
 - as: setup-fedora-periodic
-  cron: 00 00 * * *
+  cron: 27 4 10,24 * *
   steps:
     cluster_profile: gcp
     workflow: cri-o-setup-fedora

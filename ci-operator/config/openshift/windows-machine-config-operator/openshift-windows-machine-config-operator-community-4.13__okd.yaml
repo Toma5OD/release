@@ -18,7 +18,7 @@ releases:
   latest:
     integration:
       include_built_images: true
-      name: "4.13"
+      name: '4.13'
       namespace: origin
 resources:
   '*':
@@ -53,11 +53,11 @@ tests:
   container:
     from: src
 - as: aws-e2e-operator
-  cron: 0 0 * * 2,5
+  cron: 27 8 * * 7
   steps:
     cluster_profile: aws
     env:
-      COMMUNITY: "true"
+      COMMUNITY: 'true'
     test:
     - ref: windows-e2e-operator-test
     workflow: ipi-aws-ovn-hybrid

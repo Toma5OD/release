@@ -1,6 +1,6 @@
 base_images:
   ansible:
-    name: "4.9"
+    name: '4.9'
     namespace: ocp
     tag: ansible
   assisted-installer:
@@ -24,19 +24,19 @@ base_images:
     namespace: ocp-kni
     tag: assisted-test-infra
   aws-ebs-csi-driver-operator-test:
-    name: "4.9"
+    name: '4.9'
     namespace: ocp
     tag: aws-ebs-csi-driver-operator-test
   azure-disk-csi-driver-operator-test:
-    name: "4.9"
+    name: '4.9'
     namespace: ocp
     tag: azure-disk-csi-driver-operator-test
   base:
-    name: "4.9"
+    name: '4.9'
     namespace: ocp
     tag: base
   console-tests:
-    name: "4.9"
+    name: '4.9'
     namespace: ocp
     tag: console-tests
   dev-scripts:
@@ -44,19 +44,19 @@ base_images:
     namespace: ocp-kni
     tag: dev-scripts
   gcp-pd-csi-driver-operator-test:
-    name: "4.9"
+    name: '4.9'
     namespace: ocp
     tag: gcp-pd-csi-driver-operator-test
   libvirt-installer:
-    name: "4.9"
+    name: '4.9'
     namespace: ocp
     tag: libvirt-installer
   upi-installer:
-    name: "4.9"
+    name: '4.9'
     namespace: ocp
     tag: upi-installer
   vsphere-csi-driver-operator-test:
-    name: "4.9"
+    name: '4.9'
     namespace: ocp
     tag: vsphere-csi-driver-operator-test
 releases:
@@ -66,50 +66,50 @@ releases:
       product: ocp
       relative: 1
       stream: nightly
-      version: "4.9"
+      version: '4.9'
   arm64-latest:
     candidate:
       architecture: arm64
       product: ocp
       stream: nightly
-      version: "4.9"
+      version: '4.9'
   initial:
     candidate:
       product: ocp
       relative: 1
       stream: nightly
-      version: "4.9"
+      version: '4.9'
   latest:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.9"
+      version: '4.9'
   ppc64le-initial:
     candidate:
       architecture: ppc64le
       product: ocp
       relative: 1
       stream: nightly
-      version: "4.9"
+      version: '4.9'
   ppc64le-latest:
     candidate:
       architecture: ppc64le
       product: ocp
       stream: nightly
-      version: "4.9"
+      version: '4.9'
   s390x-initial:
     candidate:
       architecture: s390x
       product: ocp
       relative: 1
       stream: nightly
-      version: "4.9"
+      version: '4.9'
   s390x-latest:
     candidate:
       architecture: s390x
       product: ocp
       stream: nightly
-      version: "4.9"
+      version: '4.9'
 resources:
   '*':
     requests:
@@ -117,7 +117,7 @@ resources:
       memory: 200Mi
 tests:
 - as: ocp-e2e-aws-arm64
-  cron: 25 10 3,13 * *
+  cron: 53 9 6,19 * *
   steps:
     cluster_profile: aws-arm64
     dependencies:
@@ -128,7 +128,7 @@ tests:
       TEST_ARGS: --from-repository quay.io/multi-arch/community-e2e-images
     workflow: openshift-e2e-aws
 - as: ocp-installer-e2e-aws-ovn-arm64
-  cron: 43 6 4,15 * *
+  cron: 44 1 6,22 * *
   steps:
     cluster_profile: aws-arm64
     dependencies:
@@ -139,134 +139,134 @@ tests:
     workflow: ipi-aws-ovn
 - as: ocp-e2e-remote-libvirt-s390x
   cluster: build01
-  cron: 40 8 1,23 * *
+  cron: 47 6 9,20 * *
   steps:
     cluster_profile: libvirt-s390x
     dependencies:
       OPENSHIFT_INSTALL_RELEASE_IMAGE_OVERRIDE: release:s390x-latest
     env:
       ARCH: s390x
-      BRANCH: "4.9"
-      NODE_TUNING: "true"
+      BRANCH: '4.9'
+      NODE_TUNING: 'true'
       TEST_TYPE: conformance-parallel
     workflow: openshift-e2e-libvirt
 - as: ocp-image-ecosystem-remote-libvirt-s390x
   cluster: build01
-  cron: 33 11 8 */12 *
+  cron: 52 8 6,25 * *
   steps:
     cluster_profile: libvirt-s390x
     dependencies:
       OPENSHIFT_INSTALL_RELEASE_IMAGE_OVERRIDE: release:s390x-latest
     env:
       ARCH: s390x
-      BRANCH: "4.9"
+      BRANCH: '4.9'
       TEST_TYPE: image-ecosystem
     workflow: openshift-e2e-libvirt
 - as: ocp-jenkins-e2e-remote-libvirt-s390x
   cluster: build01
-  cron: 11 23 4 */12 *
+  cron: 4 4 7,17 * *
   steps:
     cluster_profile: libvirt-s390x
     dependencies:
       OPENSHIFT_INSTALL_RELEASE_IMAGE_OVERRIDE: release:s390x-latest
     env:
       ARCH: s390x
-      BRANCH: "4.9"
+      BRANCH: '4.9'
       TEST_TYPE: jenkins-e2e-rhel-only
     workflow: openshift-e2e-libvirt
 - as: ocp-e2e-serial-remote-libvirt-s390x
   cluster: build01
-  cron: 51 16 2 */12 *
+  cron: 56 8 10,17 * *
   steps:
     cluster_profile: libvirt-s390x
     dependencies:
       OPENSHIFT_INSTALL_RELEASE_IMAGE_OVERRIDE: release:s390x-latest
     env:
       ARCH: s390x
-      BRANCH: "4.9"
+      BRANCH: '4.9'
       TEST_TYPE: conformance-serial
     workflow: openshift-e2e-libvirt
 - as: ocp-e2e-compact-remote-libvirt-s390x
   cluster: build01
-  cron: '@yearly'
+  cron: 17 4 6,16 * *
   steps:
     cluster_profile: libvirt-s390x
     dependencies:
       OPENSHIFT_INSTALL_RELEASE_IMAGE_OVERRIDE: release:s390x-latest
     env:
       ARCH: s390x
-      BRANCH: "4.9"
-      MASTER_DISK: "64424509440"
-      MASTER_MEMORY: "32768"
+      BRANCH: '4.9'
+      MASTER_DISK: '64424509440'
+      MASTER_MEMORY: '32768'
       TEST_TYPE: conformance-parallel
-      WORKER_DISK: "64424509440"
-      WORKER_MEMORY: "32768"
-      WORKER_REPLICAS: "0"
+      WORKER_DISK: '64424509440'
+      WORKER_MEMORY: '32768'
+      WORKER_REPLICAS: '0'
     workflow: openshift-e2e-libvirt
 - as: ocp-e2e-remote-libvirt-ppc64le
   cluster: build01
-  cron: 53 22 3,13 * *
+  cron: 39 4 9,25 * *
   steps:
     cluster_profile: libvirt-ppc64le
     dependencies:
       OPENSHIFT_INSTALL_RELEASE_IMAGE_OVERRIDE: release:ppc64le-latest
     env:
       ARCH: ppc64le
-      BRANCH: "4.9"
+      BRANCH: '4.9'
       TEST_TYPE: conformance-parallel
     workflow: openshift-e2e-libvirt
 - as: ocp-image-ecosystem-remote-libvirt-ppc64le
   cluster: build01
-  cron: 33 11 8 */12 *
+  cron: 13 10 6,20 * *
   steps:
     cluster_profile: libvirt-ppc64le
     dependencies:
       OPENSHIFT_INSTALL_RELEASE_IMAGE_OVERRIDE: release:ppc64le-latest
     env:
       ARCH: ppc64le
-      BRANCH: "4.9"
+      BRANCH: '4.9'
       TEST_TYPE: image-ecosystem
     workflow: openshift-e2e-libvirt
 - as: ocp-jenkins-e2e-remote-libvirt-ppc64le
   cluster: build01
-  cron: 11 23 4 */12 *
+  cron: 31 1 5,24 * *
   steps:
     cluster_profile: libvirt-ppc64le
     dependencies:
       OPENSHIFT_INSTALL_RELEASE_IMAGE_OVERRIDE: release:ppc64le-latest
     env:
       ARCH: ppc64le
-      BRANCH: "4.9"
+      BRANCH: '4.9'
       TEST_TYPE: jenkins-e2e-rhel-only
     workflow: openshift-e2e-libvirt
 - as: ocp-e2e-serial-remote-libvirt-ppc64le
   cluster: build01
-  cron: 51 16 2 */12 *
+  cron: 27 10 9,20 * *
   steps:
     cluster_profile: libvirt-ppc64le
     dependencies:
       OPENSHIFT_INSTALL_RELEASE_IMAGE_OVERRIDE: release:ppc64le-latest
     env:
       ARCH: ppc64le
-      BRANCH: "4.9"
+      BRANCH: '4.9'
       TEST_TYPE: conformance-serial
     workflow: openshift-e2e-libvirt
 - as: ocp-e2e-compact-remote-libvirt-ppc64le
   cluster: build01
-  cron: '@yearly'
+  cron: 50 9 6,17 * *
   steps:
     cluster_profile: libvirt-ppc64le
     dependencies:
       OPENSHIFT_INSTALL_RELEASE_IMAGE_OVERRIDE: release:ppc64le-latest
     env:
       ARCH: ppc64le
-      BRANCH: "4.9"
-      MASTER_DISK: "64424509440"
-      MASTER_MEMORY: "32768"
+      BRANCH: '4.9'
+      MASTER_DISK: '64424509440'
+      MASTER_MEMORY: '32768'
       TEST_TYPE: conformance-parallel
-      WORKER_DISK: "64424509440"
-      WORKER_MEMORY: "32768"
-      WORKER_REPLICAS: "0"
+      WORKER_DISK: '64424509440'
+      WORKER_MEMORY: '32768'
+      WORKER_REPLICAS: '0'
     workflow: openshift-e2e-libvirt
 zz_generated_metadata:
   branch: master

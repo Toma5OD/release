@@ -2,7 +2,7 @@ releases:
   latest:
     release:
       channel: fast
-      version: "4.7"
+      version: '4.7'
 resources:
   '*':
     limits:
@@ -18,47 +18,49 @@ tests:
     owner: cvp
     product: ocp
     timeout: 1h0m0s
-    version: "4.7"
-  cron: '@yearly'
+    version: '4.7'
+  cron: 47 5 8,20 * *
   steps:
     dependency_overrides:
-      BUNDLE_IMAGE: brew.registry.redhat.io/rh-osbs-stage/e2e-e2e-test-operator-bundle-container:8.0-3
+      BUNDLE_IMAGE: 
+        brew.registry.redhat.io/rh-osbs-stage/e2e-e2e-test-operator-bundle-container:8.0-3
       OO_INDEX: brew.registry.redhat.io/rh-osbs-stage/iib:23576
     env:
-      CUSTOM_SCORECARD_TESTCASE: ""
-      OO_CHANNEL: "4.3"
+      CUSTOM_SCORECARD_TESTCASE: ''
+      OO_CHANNEL: '4.3'
       OO_INSTALL_NAMESPACE: '!create'
       OO_PACKAGE: e2e-test-operator
       OO_TARGET_NAMESPACES: '!install'
-      PYXIS_URL: ""
+      PYXIS_URL: ''
       TEST_MODE: cvp
     workflow: optional-operators-cvp-common-claim
 - as: cvp-common-aws
-  cron: '@yearly'
+  cron: 47 7 10,20 * *
   steps:
     cluster_profile: aws-cpaas
     workflow: optional-operators-cvp-common-aws
 - as: cvp-common-powervs
-  cron: '@yearly'
+  cron: 11 2 9,21 * *
   steps:
     workflow: optional-operators-cvp-common-powervs
 - as: cvp-common-ibmz-eco
-  cron: '@yearly'
+  cron: 36 10 10,19 * *
   steps:
     env:
       CLUSTER_DOMAIN: linux.dfw.ibm.com
-      OCP_VERSION: "4.7"
+      OCP_VERSION: '4.7'
       OPENSTACK_COMPUTE_FLAVOR: medium
       OS_CLOUD: rhcert
     workflow: optional-operators-cvp-common-ibmz-eco
 - as: probe
-  cron: '@yearly'
+  cron: 27 7 8,15 * *
   steps:
     dependency_overrides:
-      BUNDLE_IMAGE: brew.registry.redhat.io/rh-osbs-stage/e2e-e2e-test-operator-bundle-container:8.0-3
+      BUNDLE_IMAGE: 
+        brew.registry.redhat.io/rh-osbs-stage/e2e-e2e-test-operator-bundle-container:8.0-3
       OO_INDEX: brew.registry.redhat.io/rh-osbs-stage/iib:23576
     env:
-      OO_CHANNEL: "4.3"
+      OO_CHANNEL: '4.3'
       OO_INSTALL_NAMESPACE: '!create'
       OO_PACKAGE: e2e-test-operator
       OO_TARGET_NAMESPACES: '!install'

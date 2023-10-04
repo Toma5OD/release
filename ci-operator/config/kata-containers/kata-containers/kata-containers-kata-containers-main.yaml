@@ -18,12 +18,12 @@ images:
 releases:
   initial:
     integration:
-      name: "4.13"
+      name: '4.13'
       namespace: ocp
   latest:
     integration:
       include_built_images: true
-      name: "4.13"
+      name: '4.13'
       namespace: ocp
 resources:
   '*':
@@ -32,14 +32,15 @@ resources:
       memory: 2Gi
 tests:
 - as: e2e-tests
-  cron: 2 7 * * *
+  cron: 21 11 * * 6
   steps:
     allow_best_effort_post_steps: true
     allow_skip_on_success: true
     cluster_profile: azure4
     env:
       TEST_ARGS: ' --max-parallel-tests 5 '
-      TEST_SKIPS: \[sig-api-machinery\]\|\[sig-apps\]\|\[sig-arch\]\|\[sig-auth\]\|\[sig-autoscaling\]\|\[sig-builds\]\|\[sig-ci\]\|\[sig-cli\]\|\[sig-cloud-provider\]\|\[sig-cluster-lifecycle\]\|\[sig-coreos\]\|\[sig-devex\]\|\[sig-etcd\]\|\[sig-imageregistry\]\|\[sig-installer\]\|\[sig-instrumentation\]\|\[sig-kubevirt\]\|\[sig-network-edge\]\|\[sig-operator\]\|\[sig-scheduling\]\|\[sig-storage\]\|\[sig-node\]
+      TEST_SKIPS: 
+        \[sig-api-machinery\]\|\[sig-apps\]\|\[sig-arch\]\|\[sig-auth\]\|\[sig-autoscaling\]\|\[sig-builds\]\|\[sig-ci\]\|\[sig-cli\]\|\[sig-cloud-provider\]\|\[sig-cluster-lifecycle\]\|\[sig-coreos\]\|\[sig-devex\]\|\[sig-etcd\]\|\[sig-imageregistry\]\|\[sig-installer\]\|\[sig-instrumentation\]\|\[sig-kubevirt\]\|\[sig-network-edge\]\|\[sig-operator\]\|\[sig-scheduling\]\|\[sig-storage\]\|\[sig-node\]
         Security Context should support seccomp runtime/default\|\[sig-node\] Variable
         Expansion should allow substituting values in a volume subpath\|\[sig-node\]
         Container Runtime blackbox test on terminated container should report termination

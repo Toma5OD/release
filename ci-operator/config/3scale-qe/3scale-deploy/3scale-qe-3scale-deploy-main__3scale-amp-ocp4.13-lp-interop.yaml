@@ -1,6 +1,6 @@
 base_images:
   cli:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: cli
   test-image:
@@ -21,7 +21,7 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     limits:
@@ -31,7 +31,7 @@ resources:
       memory: 200Mi
 tests:
 - as: 3scale-amp-interop-aws
-  cron: 0 6 25 12 *
+  cron: 24 13 * * 7
   steps:
     cluster_profile: aws-cspi-qe
     env:

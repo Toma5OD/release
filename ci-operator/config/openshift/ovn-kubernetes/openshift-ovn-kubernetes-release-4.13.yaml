@@ -42,17 +42,17 @@ images:
       - registry.ci.openshift.org/ocp/builder:rhel-9-golang-1.19-openshift-4.13
   to: ovn-kubernetes-microshift-rhel-9
 promotion:
-  name: "4.13"
+  name: '4.13'
   namespace: ocp
 releases:
   initial:
     integration:
-      name: "4.13"
+      name: '4.13'
       namespace: ocp
   latest:
     integration:
       include_built_images: true
-      name: "4.13"
+      name: '4.13'
       namespace: ocp
 resources:
   '*':
@@ -96,7 +96,7 @@ tests:
   steps:
     cluster_profile: aws
     env:
-      WINDOWS_SERVER_VERSION: "2019"
+      WINDOWS_SERVER_VERSION: '2019'
     test:
     - ref: windows-e2e-operator-test
     workflow: ipi-aws-ovn-hybrid-toggle
@@ -144,7 +144,7 @@ tests:
       TEST_SUITE: openshift/conformance/parallel
     workflow: openshift-e2e-openstack-ipi
 - as: e2e-ibmcloud-ipi-ovn-periodic
-  cron: 0 0 * * *
+  cron: 43 14 * * 7
   steps:
     cluster_profile: ibmcloud
     workflow: openshift-e2e-ibmcloud-ovn
@@ -153,7 +153,7 @@ tests:
     cluster_profile: aws
     workflow: openshift-e2e-aws-ovn-shared-to-local-gateway-mode-migration
 - as: e2e-aws-ovn-shared-to-local-gateway-mode-migration-periodic
-  cron: 0 0 */2 * *
+  cron: 57 17 * * 7
   steps:
     cluster_profile: aws
     workflow: openshift-e2e-aws-ovn-shared-to-local-gateway-mode-migration
@@ -164,7 +164,7 @@ tests:
       GATEWAY_MODE: local
     workflow: openshift-e2e-aws-ovn-local-to-shared-gateway-mode-migration
 - as: e2e-aws-ovn-local-to-shared-gateway-mode-migration-periodic
-  cron: 0 0 */2 * *
+  cron: 52 1 * * 7
   steps:
     cluster_profile: aws
     env:
@@ -209,7 +209,7 @@ tests:
     cluster_profile: aws-perfscale
     env:
       BASE_DOMAIN: perfscale.devcluster.openshift.com
-      COMPUTE_NODE_REPLICAS: "120"
+      COMPUTE_NODE_REPLICAS: '120'
       COMPUTE_NODE_TYPE: m5.xlarge
       SIZE_VARIANT: large
     post:
@@ -226,7 +226,7 @@ tests:
     cluster_profile: aws-perfscale-qe
     env:
       BASE_DOMAIN: qe.devcluster.openshift.com
-      COMPUTE_NODE_REPLICAS: "24"
+      COMPUTE_NODE_REPLICAS: '24'
       COMPUTE_NODE_TYPE: m5.xlarge
     post:
     - chain: ipi-aws-post
@@ -242,7 +242,7 @@ tests:
     cluster_profile: aws-perfscale
     env:
       BASE_DOMAIN: perfscale.devcluster.openshift.com
-      COMPUTE_NODE_REPLICAS: "120"
+      COMPUTE_NODE_REPLICAS: '120'
       COMPUTE_NODE_TYPE: m5.xlarge
       SIZE_VARIANT: large
     post:
@@ -259,7 +259,7 @@ tests:
     cluster_profile: aws-perfscale-qe
     env:
       BASE_DOMAIN: qe.devcluster.openshift.com
-      COMPUTE_NODE_REPLICAS: "24"
+      COMPUTE_NODE_REPLICAS: '24'
       COMPUTE_NODE_TYPE: m5.xlarge
     post:
     - chain: ipi-aws-post

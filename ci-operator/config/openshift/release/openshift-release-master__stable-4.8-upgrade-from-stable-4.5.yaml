@@ -2,19 +2,19 @@ releases:
   four-seven:
     release:
       channel: fast
-      version: "4.7"
+      version: '4.7'
   four-six:
     release:
       channel: fast
-      version: "4.6"
+      version: '4.6'
   initial:
     release:
       channel: fast
-      version: "4.5"
+      version: '4.5'
   latest:
     release:
       channel: fast
-      version: "4.8"
+      version: '4.8'
 resources:
   '*':
     requests:
@@ -22,12 +22,12 @@ resources:
       memory: 200Mi
 tests:
 - as: e2e-aws-upgrade
-  cron: 42 4 9,26 * *
+  cron: 2 4 10,23 * *
   steps:
     cluster_profile: aws-2
     env:
       BASE_DOMAIN: aws-2.ci.openshift.org
-      TEST_UPGRADE_OPTIONS: ""
+      TEST_UPGRADE_OPTIONS: ''
       TEST_UPGRADE_SUITE: none
     test:
     - as: set-releases-release

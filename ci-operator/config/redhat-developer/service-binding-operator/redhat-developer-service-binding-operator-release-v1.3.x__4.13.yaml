@@ -1,6 +1,6 @@
 base_images:
   upi-installer:
-    name: "4.13"
+    name: '4.13'
     namespace: ocp
     tag: upi-installer
 build_root:
@@ -17,12 +17,12 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
   latest:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.13"
+      version: '4.13'
 resources:
   '*':
     requests:
@@ -30,7 +30,8 @@ resources:
       memory: 250Mi
 tests:
 - as: acceptance
-  run_if_changed: ^.github/workflows/pr-checks-build-images.yaml$|^apis|^build|^config|^controllers|^hack/get-test-namespace|^hack/remove-sbr-finalizers.sh$|^hack/test-cleanup.sh$|^controllers|^make/acceptance.mk$|^make/build.mk$|^make/common.mk$|^make/release.mk$|^make/version.mk$|^pkg|^test/acceptance|^tools|^vendor|^Dockerfile$|^go.mod$|^go.sum$|^install.sh$|^main.go$
+  run_if_changed: 
+    ^.github/workflows/pr-checks-build-images.yaml$|^apis|^build|^config|^controllers|^hack/get-test-namespace|^hack/remove-sbr-finalizers.sh$|^hack/test-cleanup.sh$|^controllers|^make/acceptance.mk$|^make/build.mk$|^make/common.mk$|^make/release.mk$|^make/version.mk$|^pkg|^test/acceptance|^tools|^vendor|^Dockerfile$|^go.mod$|^go.sum$|^install.sh$|^main.go$
   steps:
     cluster_profile: aws
     test:
@@ -49,7 +50,7 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: acceptance-lp-interop
-  cron: 0 6 25 12 *
+  cron: 43 23 * * 6
   steps:
     cluster_profile: aws-cspi-qe
     env:
@@ -74,7 +75,7 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: acceptance-lp-rosa-hypershift
-  cron: 0 10 25 12 *
+  cron: 59 1 * * 7
   steps:
     cluster_profile: aws-cspi-qe
     env:
@@ -90,7 +91,7 @@ tests:
       FIREWATCH_DEFAULT_JIRA_PROJECT: LPTOCPCI
       FIREWATCH_JIRA_SERVER: https://issues.redhat.com
       OCM_LOGIN_ENV: staging
-      OPENSHIFT_VERSION: "4.13"
+      OPENSHIFT_VERSION: '4.13'
       OPERATORS: |
         [
             {"name": "rh-service-binding-operator", "source": "redhat-operators", "channel": "!default", "install_namespace": "openshift-operators"}
@@ -105,4 +106,4 @@ zz_generated_metadata:
   branch: release-v1.3.x
   org: redhat-developer
   repo: service-binding-operator
-  variant: "4.13"
+  variant: '4.13'

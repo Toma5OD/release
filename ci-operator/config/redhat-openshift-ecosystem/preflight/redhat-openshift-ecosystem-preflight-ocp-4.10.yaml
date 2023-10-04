@@ -2,7 +2,7 @@ releases:
   latest:
     release:
       channel: fast
-      version: "4.10"
+      version: '4.10'
 resources:
   '*':
     limits:
@@ -18,8 +18,8 @@ tests:
     owner: openshift-ci
     product: ocp
     timeout: 1h0m0s
-    version: "4.10"
-  cron: '@yearly'
+    version: '4.10'
+  cron: 58 10 8,16 * *
   steps:
     env:
       ASSET_TYPE: operator
