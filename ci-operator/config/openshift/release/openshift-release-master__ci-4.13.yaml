@@ -17,7 +17,7 @@ resources:
       memory: 200Mi
 tests:
 - as: e2e-aws-sdn
-  interval: 168h
+  cron: 33 21 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -27,7 +27,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-aws-sdn
 - as: e2e-aws-sdn-techpreview
-  interval: 168h
+  cron: 46 1 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -38,7 +38,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-aws-sdn
 - as: e2e-aws-ovn-no-capabilities
-  interval: 168h
+  cron: 48 5 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -52,7 +52,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-aws-ovn
 - as: e2e-aws-ovn
-  interval: 168h
+  cron: 42 10 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -62,7 +62,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-aws-ovn
 - as: e2e-aws-sdn-serial
-  interval: 168h
+  cron: 59 22 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -72,7 +72,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-aws-sdn-serial
 - as: e2e-aws-ovn-serial
-  interval: 168h
+  cron: 50 19 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -82,7 +82,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-aws-ovn-serial
 - as: e2e-aws-sdn-techpreview-serial
-  interval: 168h
+  cron: 53 18 * * 6
   steps:
     cluster_profile: aws-2
     env:
@@ -93,7 +93,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-aws-sdn-serial
 - as: e2e-aws-sdn-multitenant
-  interval: 168h
+  cron: 0 20 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -104,7 +104,7 @@ tests:
     workflow: openshift-e2e-aws-sdn-multi
 - as: e2e-aws-sdn-upgrade
   cluster: build01
-  interval: 168h
+  cron: 5 22 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -116,7 +116,7 @@ tests:
     workflow: openshift-upgrade-aws-sdn
 - as: e2e-aws-ovn-upgrade
   cluster: build01
-  interval: 168h
+  cron: 6 19 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -128,7 +128,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-upgrade-aws-ovn
 - as: e2e-aws-cilium
-  interval: 168h
+  cron: 13 9 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -138,7 +138,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-aws-cilium
 - as: e2e-aws-sdn-imdsv2
-  interval: 168h
+  cron: 29 16 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -149,7 +149,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-aws-sdn
 - as: e2e-azure-sdn
-  interval: 168h
+  cron: 34 4 * * 0
   steps:
     cluster_profile: azure-2
     env:
@@ -159,7 +159,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-azure-sdn
 - as: e2e-azure-sdn-techpreview
-  interval: 168h
+  cron: 42 2 * * 0
   steps:
     cluster_profile: azure-2
     env:
@@ -170,7 +170,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-azure-sdn
 - as: e2e-azure-sdn-serial
-  interval: 168h
+  cron: 13 8 * * 6
   steps:
     cluster_profile: azure-2
     env:
@@ -180,7 +180,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-azure-sdn-serial
 - as: e2e-azure-sdn-techpreview-serial
-  interval: 168h
+  cron: 34 18 * * 0
   steps:
     cluster_profile: azure-2
     env:
@@ -191,7 +191,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-azure-sdn-serial
 - as: e2e-azure-sdn-upgrade
-  interval: 168h
+  cron: 23 1 * * 0
   steps:
     cluster_profile: azure-2
     env:
@@ -202,7 +202,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-upgrade-azure-sdn
 - as: e2e-azure-ovn-upgrade
-  interval: 168h
+  cron: 12 13 * * 6
   steps:
     cluster_profile: azure-2
     env:
@@ -224,7 +224,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-azure-cilium
 - as: e2e-azure-ovn
-  interval: 168h
+  cron: 15 7 * * 0
   steps:
     cluster_profile: azure-2
     env:
@@ -235,7 +235,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-azure-ovn
 - as: e2e-gcp-sdn
-  interval: 168h
+  cron: 15 10 * * 0
   steps:
     cluster_profile: gcp-openshift-gce-devel-ci-2
     observers:
@@ -243,7 +243,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-gcp-sdn
 - as: e2e-gcp-sdn-techpreview
-  interval: 168h
+  cron: 55 19 * * 0
   steps:
     cluster_profile: gcp-openshift-gce-devel-ci-2
     env:
@@ -253,7 +253,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-gcp-sdn
 - as: e2e-gcp-ovn
-  interval: 168h
+  cron: 51 15 * * 6
   steps:
     cluster_profile: gcp-openshift-gce-devel-ci-2
     env:
@@ -263,7 +263,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-gcp-ovn
 - as: e2e-gcp-ovn-mount-ns-hiding
-  interval: 168h
+  cron: 41 4 * * 0
   steps:
     cluster_profile: gcp-openshift-gce-devel-ci-2
     env:
@@ -275,7 +275,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-gcp-mount-ns-hiding
 - as: e2e-gcp-sdn-techpreview-serial
-  interval: 168h
+  cron: 9 21 * * 6
   steps:
     cluster_profile: gcp-openshift-gce-devel-ci-2
     env:
@@ -286,7 +286,7 @@ tests:
     workflow: openshift-e2e-gcp-sdn-serial
 - as: e2e-gcp-sdn-upgrade
   cluster: build02
-  interval: 168h
+  cron: 41 19 * * 6
   steps:
     cluster_profile: gcp-openshift-gce-devel-ci-2
     env:
@@ -296,7 +296,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-upgrade-gcp-sdn
 - as: e2e-gcp-cilium
-  interval: 168h
+  cron: 18 2 * * 6
   steps:
     cluster_profile: gcp-openshift-gce-devel-ci-2
     observers:
@@ -313,7 +313,7 @@ tests:
     workflow: openshift-e2e-gcp-secureboot
   timeout: 6h0m0s
 - as: e2e-aws-sdn-upgrade-rollback
-  interval: 168h
+  cron: 27 2 * * 6
   steps:
     cluster_profile: aws-2
     env:
@@ -325,7 +325,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-upgrade-aws-sdn
 - as: e2e-aws-upgrade-ovn-single-node
-  interval: 168h
+  cron: 59 2 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -336,7 +336,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-upgrade-aws-single-node
 - as: e2e-aws-ovn-network-migration
-  interval: 168h
+  cron: 54 6 * * 0
   steps:
     cluster_profile: aws-2
     env:
@@ -358,7 +358,7 @@ tests:
     - ref: openshift-e2e-test
     workflow: openshift-e2e-aws-sdn
 - as: e2e-network-migration-rollback
-  interval: 168h
+  cron: 21 12 * * 6
   steps:
     cluster_profile: aws-2
     env:
@@ -381,7 +381,7 @@ tests:
     - ref: openshift-e2e-test
     workflow: openshift-e2e-aws-sdn
 - as: e2e-aws-sdn-cgroupsv2
-  interval: 168h
+  cron: 42 21 * * 6
   steps:
     cluster_profile: aws-2
     env:
@@ -391,7 +391,7 @@ tests:
       - observers-resource-watch
     workflow: openshift-e2e-aws-sdn-cgroupsv2
 - as: e2e-aws-sdn-crun
-  interval: 168h
+  cron: 31 9 * * 6
   steps:
     cluster_profile: aws-2
     env:

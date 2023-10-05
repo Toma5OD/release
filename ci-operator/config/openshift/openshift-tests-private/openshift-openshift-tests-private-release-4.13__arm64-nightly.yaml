@@ -260,7 +260,7 @@ tests:
     - chain: openshift-e2e-test-qe-destructive
     workflow: cucushift-installer-rehearse-aws-ipi-byo-route53
 - as: aws-ipi-compact-f14
-  cron: 24 1 2,17 * *
+  cron: 4 10 * * 6
   steps:
     cluster_profile: aws-qe
     dependencies:
@@ -691,7 +691,7 @@ tests:
     - chain: openshift-e2e-test-hypershift-qe-destructive
     workflow: cucushift-installer-rehearse-aws-ipi-ovn-hypershift-guest
 - as: aws-ipi-ovn-hypershift-mgmt-f7
-  cron: 23 3 3,11,18,25 * *
+  cron: 16 15 * * 0
   steps:
     cluster_profile: aws-qe
     dependencies:
@@ -1263,7 +1263,7 @@ tests:
     - chain: openshift-e2e-test-qe-destructive
     workflow: cucushift-installer-rehearse-azure-ipi-disk-encryption-set
 - as: azure-ipi-fullyprivate-proxy-f14
-  cron: 9 21 7,22 * *
+  cron: 44 12 * * 0
   steps:
     cluster_profile: azure-qe
     dependencies:
@@ -1598,7 +1598,7 @@ tests:
     workflow: cucushift-installer-rehearse-baremetalds-ipi-ovn-ipv4
 - as: baremetal-compact-agent-ipv4-dynamic-connected-f7
   cluster: build05
-  cron: 30 21 * * 2
+  cron: 8 15 * * 0
   steps:
     cluster_profile: equinix-ocp-metal-qe
     dependencies:
@@ -1619,7 +1619,7 @@ tests:
     workflow: baremetal-lab-agent-install-network-dynamic
 - as: baremetal-compact-agent-ipv4-static-connected-f7
   cluster: build05
-  cron: 30 21 * * 1
+  cron: 0 15 * * 0
   steps:
     cluster_profile: equinix-ocp-metal-qe
     dependencies:
@@ -1640,7 +1640,7 @@ tests:
     workflow: baremetal-lab-agent-install-network-static
 - as: baremetal-compact-agent-ipv4-static-disconnected-proxy-f7
   cluster: build05
-  cron: 30 21 * * 3
+  cron: 28 4 * * 0
   steps:
     cluster_profile: equinix-ocp-metal-qe
     dependencies:
@@ -1661,7 +1661,7 @@ tests:
     workflow: baremetal-lab-agent-install-network-static-disconnected-proxy
 - as: baremetal-sno-agent-ipv4-static-connected-f7
   cluster: build05
-  cron: 30 9 * * 2
+  cron: 42 16 * * 6
   steps:
     cluster_profile: equinix-ocp-metal-qe
     dependencies:

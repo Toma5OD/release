@@ -265,7 +265,7 @@ periodics:
         secretName: result-aggregator
 - agent: kubernetes
   cluster: vsphere
-  cron: 0 0 * * 1
+  cron: 54 1 * * 0
   decorate: true
   decoration_config:
     skip_cloning: true

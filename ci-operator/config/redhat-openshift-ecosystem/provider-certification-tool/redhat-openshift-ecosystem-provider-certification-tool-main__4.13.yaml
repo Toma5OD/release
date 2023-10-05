@@ -34,7 +34,7 @@ tests:
     workflow: opct-test-platform-none-vsphere
   timeout: 6h0m0s
 - as: platform-external-vsphere
-  cron: 0 0 * * 1
+  cron: 54 1 * * 0
   steps:
     cluster_profile: vsphere
     env:

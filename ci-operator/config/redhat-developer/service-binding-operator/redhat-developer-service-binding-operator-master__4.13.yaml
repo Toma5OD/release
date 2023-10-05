@@ -65,7 +65,7 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: validate-master-build
-  cron: 0 0 * * *
+  cron: 47 11 * * 0
   steps:
     cluster_profile: aws
     test:
@@ -79,7 +79,7 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: performance-next-openshift
-  cron: 0 20 * * 0
+  cron: 53 4 * * 6
   steps:
     cluster_profile: aws
     env:
