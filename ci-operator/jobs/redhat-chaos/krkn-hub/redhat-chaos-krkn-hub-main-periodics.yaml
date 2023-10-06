@@ -179,7 +179,7 @@ periodics:
         secretName: result-aggregator
 - agent: kubernetes
   cluster: build05
-  cron: 0 8 */2 * *
+  cron: 28 5 * * 0
   decorate: true
   extra_refs:
   - base_ref: main
@@ -269,7 +269,7 @@ periodics:
         secretName: result-aggregator
 - agent: kubernetes
   cluster: build04
-  cron: 0 8 */2 * *
+  cron: 5 3 * * 0
   decorate: true
   extra_refs:
   - base_ref: main
@@ -358,7 +358,7 @@ periodics:
         secretName: result-aggregator
 - agent: kubernetes
   cluster: build05
-  cron: 0 8 */2 * *
+  cron: 2 5 * * 0
   decorate: true
   extra_refs:
   - base_ref: main

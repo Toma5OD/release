@@ -730,7 +730,7 @@ periodics:
         secretName: result-aggregator
 - agent: kubernetes
   cluster: build04
-  cron: 0 0,12 * * *
+  cron: 33 20 * * 0
   decorate: true
   decoration_config:
     skip_cloning: true
@@ -808,7 +808,7 @@ periodics:
         secretName: result-aggregator
 - agent: kubernetes
   cluster: build04
-  cron: 0 8,20 * * *
+  cron: 22 8 * * 0
   decorate: true
   decoration_config:
     skip_cloning: true
@@ -886,7 +886,7 @@ periodics:
         secretName: result-aggregator
 - agent: kubernetes
   cluster: build04
-  cron: 0 4,16 * * *
+  cron: 21 22 * * 6
   decorate: true
   decoration_config:
     skip_cloning: true
@@ -1339,7 +1339,7 @@ periodics:
         secretName: result-aggregator
 - agent: kubernetes
   cluster: build04
-  cron: 0 6,18 * * *
+  cron: 25 23 * * 6
   decorate: true
   decoration_config:
     skip_cloning: true
@@ -1417,7 +1417,7 @@ periodics:
         secretName: result-aggregator
 - agent: kubernetes
   cluster: build04
-  cron: 0 2,14 * * *
+  cron: 5 11 * * 0
   decorate: true
   decoration_config:
     skip_cloning: true
@@ -1495,7 +1495,7 @@ periodics:
         secretName: result-aggregator
 - agent: kubernetes
   cluster: build04
-  cron: 0 4,16 * * *
+  cron: 57 18 * * 0
   decorate: true
   decoration_config:
     skip_cloning: true

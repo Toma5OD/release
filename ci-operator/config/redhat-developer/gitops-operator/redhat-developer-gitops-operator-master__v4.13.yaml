@@ -147,7 +147,7 @@ tests:
     product: ocp
     timeout: 1h0m0s
     version: "4.13"
-  cron: 0 0 * * *
+  cron: 31 11 * * 6
   steps:
     env:
       INSTALL_NAMESPACE: openshift-gitops-operator
@@ -186,7 +186,7 @@ tests:
     product: ocp
     timeout: 1h0m0s
     version: "4.13"
-  cron: 0 0 * * *
+  cron: 25 22 * * 0
   steps:
     env:
       INSTALL_NAMESPACE: openshift-gitops-operator
