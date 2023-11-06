@@ -34,6 +34,7 @@ presubmits:
         - --ignore=insights-qe/iqe-cost-management-plugin
         - --ignore=ansible/tower-qa
         - --ignore=rh-openjdk/jdkContainerOcpTests
+        - --plugin-config=/etc/plugins/plugins.yaml
         command:
         - ./hack/check-gh-automation.sh
         env:
@@ -52,10 +53,16 @@ presubmits:
         - mountPath: /etc/github
           name: github-app-credentials
           readOnly: true
+        - mountPath: /etc/plugins
+          name: plugin-config  # This must match the name given to the volume above
+          readOnly: true
       volumes:
       - name: github-app-credentials
         secret:
           secretName: openshift-prow-github-app
+      - name: plugin-config
+        configMap:
+          name: plugin-config #THIS IS A TEMP NAME. NEEDS TO BE REPLACED WITH THE CORRECT NAME OF THE ConfigMap
     trigger: (?m)^/test( | .* )check-gh-automation,?($|\s.*)
   - agent: kubernetes
     always_run: false
